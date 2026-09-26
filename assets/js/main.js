@@ -70,10 +70,11 @@ if (counterEls.length) {
 }
 
 // Lightbox — works with .gallery-card elements
-const lb      = document.getElementById('lightboxBackdrop');
-const lbImg   = document.getElementById('lightboxImg');
-const lbCap   = document.getElementById('lightboxCaption');
-const lbClose = document.getElementById('lightboxClose');
+const lb        = document.getElementById('lightboxBackdrop');
+const lbImg     = document.getElementById('lightboxImg');
+const lbCap     = document.getElementById('lightboxCaption');
+const lbClose   = document.getElementById('lightboxClose');
+const lbDetails = document.getElementById('lightboxDetails');
 
 if (lb) {
   document.querySelectorAll('.gallery-card').forEach(card => {
@@ -82,6 +83,16 @@ if (lb) {
       const img = card.querySelector('img');
       lbImg.src        = card.getAttribute('href') || img?.src || '';
       lbCap.textContent = card.getAttribute('data-caption') || card.querySelector('.gallery-caption')?.textContent || '';
+      const detailsUrl = card.getAttribute('data-details');
+      if (lbDetails) {
+        if (detailsUrl) {
+          lbDetails.href = detailsUrl;
+          lbDetails.classList.add('show');
+        } else {
+          lbDetails.removeAttribute('href');
+          lbDetails.classList.remove('show');
+        }
+      }
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     });

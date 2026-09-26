@@ -1396,11 +1396,19 @@ ul  { list-style: none; padding: 0; margin: 0; }
   z-index: 1000;
 }
 .lightbox-close:hover { background: rgba(255,255,255,.20); }
-.lightbox-caption {
+.lightbox-info {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 90vw;
+  z-index: 1000;
+}
+.lightbox-caption {
   background: rgba(0,0,0,.75);
   color: #E2E8F0;
   padding: 8px 20px;
@@ -1412,8 +1420,22 @@ ul  { list-style: none; padding: 0; margin: 0; }
   max-width: 90vw;
   overflow: hidden;
   text-overflow: ellipsis;
-  z-index: 1000;
 }
+.lightbox-details {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: var(--r-pill);
+  font-size: .80rem;
+  font-weight: 600;
+  transition: background var(--t-fast);
+}
+.lightbox-details.show { display: inline-flex; }
+.lightbox-details:hover { background: var(--blue-hover); color: #fff; }
+.lightbox-details .material-symbols-outlined { font-size: 1rem; }
 
 /* === FLOATING BUTTONS === */
 .fab-wa {
