@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Program Report & Portfolio — Project Uddipon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Project Uddipon program report and partnership portfolio — mission, impact, program modules, pilot implementation, snapshots and contact details."
+    />
+    <meta name="robots" content="noindex" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon.png" />
+    <meta name="theme-color" content="#001A48" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/portfolio.css" />
+  </head>
+  <body class="portfolio-body">
+    <!-- ====================================================
+     TOOLBAR (screen only)
+     ==================================================== -->
+    <div class="pf-toolbar">
+      <a href="index.html" class="pf-toolbar-brand">
+        <img src="assets/images/partners/zantech-logo.png" alt="" />
+        Project Uddipon — Portfolio
+      </a>
+      <div class="pf-toolbar-actions">
+        <a href="index.html" class="pf-btn pf-btn-ghost">
+          <span class="material-symbols-outlined">arrow_back</span> Back to Site
+        </a>
+        <button id="downloadPdfBtn" class="pf-btn pf-btn-orange">
+          <span class="material-symbols-outlined">picture_as_pdf</span> Download PDF
+        </button>
+      </div>
+    </div>
+    <div class="pf-print-tip" id="pfPrintTip">
+      <span class="material-symbols-outlined">info</span>
+      <span>
+        In the print dialog that opens: set <strong>Destination</strong> to "Save as PDF", <strong>Margins</strong> to
+        "None", and turn <strong>Headers and footers</strong> off — otherwise the browser adds its own page number
+        and URL on top of this page's own footer.
+      </span>
+      <button id="pfPrintTipClose" aria-label="Dismiss">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="pf-wrap" id="pfWrap">
+      <!-- ==================================================
+       PAGE 1 — COVER
+       ================================================== -->
+      <section class="report-page pf-cover-page" data-title="Program Report">
+        <div class="pf-cover">
+          <div class="pf-cover-top">
+            <span class="pf-cover-eyebrow">
+              <span class="material-symbols-outlined" style="font-size:.9rem">verified</span>
+              Partnership Portfolio
+            </span>
+            <span class="pf-cover-eyebrow">Prepared for Partners &amp; Sponsors</span>
+          </div>
+
+          <div class="pf-cover-mid">
+            <img class="pf-cover-mark" src="assets/images/logo-uddipon.png" alt="Project Uddipon" />
+            <p class="pf-cover-tagline">Building thinkers, makers, and problem-solvers.</p>
+          </div>
+
+          <div class="pf-cover-bottom">
+            <h1 class="pf-cover-title">Program Report &amp; Partnership Portfolio</h1>
+            <p class="pf-cover-sub">
+              A nationwide STEM, Robotics &amp; AI outreach initiative by ZAN Tech —
+              mission, impact, program design and partnership opportunities.
+            </p>
+            <div class="pf-cover-meta">
+              <span>Prepared by <strong>ZAN Tech</strong></span>
+              <span>·</span>
+              <span id="pfCoverDate"></span>
+              <span>·</span>
+              <span>projectuddipon.zantechbd.com</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+       PAGE 2 — EXECUTIVE SUMMARY / PROBLEM STATEMENT
+       ================================================== -->
+      <section class="report-page" data-title="Executive Summary">
+        <div class="pf-kicker">Section 01 — Overview</div>
+        <h2 class="pf-h1">Executive Summary</h2>
+        <p class="pf-p">
+          Project Uddipon is a nationwide STEM (Science, Technology, Engineering,
+          Mathematics) outreach initiative designed to bridge the critical gap between
+          academic theory and industrial application in Bangladesh. Powered by
+          <strong>ZAN Tech</strong>, the project targets rural and underserved
+          students — specifically prioritizing female participation — to build a
+          future-ready workforce skilled in Robotics, IoT, and AI.
+        </p>
+        <ul class="pf-list">
+          <li><strong>Current Traction:</strong> Successfully trained 500+ students across 5 institutions in the pilot phase (Feni &amp; Dhaka).</li>
+          <li><strong>Goal:</strong> Establish 150+ STEM Clubs and train 100,000+ students across 64 districts within 3 years.</li>
+          <li><strong>Key Differentiation:</strong> We do not just "teach"; we build permanent STEM communities (Clubs) to ensure sustainable learning beyond the workshop.</li>
+        </ul>
+
+        <h2 class="pf-h2">Problem Statement</h2>
+        <p class="pf-p">Despite the future Bangladesh vision, rural education faces a "Hardware Divide":</p>
+        <ul class="pf-list">
+          <li><strong>Lack of Labs:</strong> 80% of rural schools lack functional robotics/IoT labs.</li>
+          <li><strong>The Gender Gap:</strong> Female participation in technical engineering fields remains critically low due to a lack of early exposure and role models.</li>
+          <li><strong>Curriculum Lag:</strong> Students graduate with theoretical knowledge but zero experience in Industry 4.0 tools (Arduino, Sensors, AI models), leaving them unemployable in the modern tech sector.</li>
+        </ul>
+      </section>
+
+      <!-- ==================================================
+       PAGE 3 — THE SOLUTION / IMPACT
+       ================================================== -->
+      <section class="report-page" data-title="The Solution: Project Uddipon">
+        <div class="pf-kicker">Section 02 — Program Model</div>
+        <h2 class="pf-h1">The Solution: Project Uddipon</h2>
+        <p class="pf-p">
+          We deploy a 5-step "Ignition Model" that transforms a standard classroom
+          into a hub of innovation:
+        </p>
+        <ul class="pf-list">
+          <li><strong>Phase 1 — Hands-on Workshops:</strong> Direct training on Line-following Robots, Obstacle Avoidance, and IoT Home Automation.</li>
+          <li><strong>Phase 2 — "Girls-in-Tech" Focus:</strong> Dedicated sessions for female students to ensure safe, supportive learning environments (achieved 30–50% female participation in pilots).</li>
+          <li><strong>Phase 3 — STEM Club Formation:</strong> We don't just leave; we set up a "Uddipon STEM Club" with starter kits and manuals to keep them building.</li>
+          <li><strong>Phase 4 — Teacher Training (ToT):</strong> Empowering local teachers to run the labs independently.</li>
+          <li><strong>Phase 5 — National Grid:</strong> Connecting these rural clubs to a central online platform for hackathons and advanced mentorship.</li>
+        </ul>
+
+        <h2 class="pf-h2">Impact &amp; Validation (The Pilot)</h2>
+        <ul class="pf-list">
+          <li><strong>Locations Covered:</strong> Feni Govt. College, Sharishadi High School, Sonagazi Girls' Pilot High School, Scholastica (Dhaka).</li>
+          <li><strong>Beneficiaries:</strong> 500+ students trained directly.</li>
+          <li><strong>Engagement:</strong> Average of 80–110 participants per session.</li>
+          <li><strong>Outcome:</strong> Students successfully built working prototypes of IoT weather stations and autonomous bots during the sessions.</li>
+        </ul>
+      </section>
+
+      <!-- ==================================================
+       PAGE 4 — STRATEGIC ALIGNMENT
+       ================================================== -->
+      <section class="report-page" data-title="Strategic Alignment">
+        <div class="pf-kicker">Section 03 — Partnership Rationale</div>
+        <h2 class="pf-h1">Strategic Alignment (Why Partner With Us?)</h2>
+
+        <h2 class="pf-h2">For Corporate Sponsors (CSR Targets)</h2>
+        <ul class="pf-list">
+          <li><strong>Brand Visibility:</strong> Your logo on 100,000+ student certificates, T-shirts, and robot kits across 64 districts.</li>
+          <li><strong>Talent Pipeline:</strong> Early access to the brightest young engineering minds in Bangladesh before they even hit the job market.</li>
+        </ul>
+
+        <h2 class="pf-h2">For NGOs &amp; Development Agencies</h2>
+        <ul class="pf-list">
+          <li>
+            <strong>SDG Alignment:</strong>
+            <ul class="pf-list pf-list-sub">
+              <li><strong>SDG 4</strong> (Quality Education): Practical technical skills.</li>
+              <li><strong>SDG 5</strong> (Gender Equality): Specific KPI for 40%+ female participation.</li>
+              <li><strong>SDG 8</strong> (Decent Work): Preparing youth for high-income tech careers.</li>
+              <li><strong>SDG 10</strong> (Reduced Inequalities): Giving rural students the same tools and opportunities as city students.</li>
+            </ul>
+          </li>
+          <li><strong>Rural Access:</strong> We go where others don't — focusing on Tier-2 and Tier-3 cities (Feni, etc.) rather than just Dhaka.</li>
+        </ul>
+      </section>
+
+      <!-- ==================================================
+       PAGE 5 — PROGRAM MODULES / SUPPORT ECOSYSTEM
+       ================================================== -->
+      <section class="report-page" data-title="Program Modules">
+        <div class="pf-kicker">Section 04 — Program Design</div>
+        <h2 class="pf-h1">Program Modules</h2>
+        <p class="pf-p">
+          We have structured our workshops into two specialized tiers to maximize
+          engagement and learning.
+        </p>
+
+        <h2 class="pf-h2">Module 1: The "Spark" Seminar (Classes 6–8)</h2>
+        <ul class="pf-list">
+          <li><strong>Focus:</strong> Inspiration and Awareness.</li>
+          <li><strong>Duration:</strong> 2–3-hour session.</li>
+          <li>
+            <strong>Key Activities:</strong>
+            <ul class="pf-list pf-list-sub">
+              <li>Tech Showcase: Demonstrating AI, IoT, and Robotic devices to ignite curiosity.</li>
+              <li>Inspiration Talk: Explaining the global impact of technology.</li>
+              <li>Interactive Quiz: A short session to test observation skills.</li>
+              <li>Recognition: Prize-giving ceremony for top participants.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2 class="pf-h2">Module 2: The "Innovator" Workshop (Classes 9–12)</h2>
+        <ul class="pf-list">
+          <li><strong>Focus:</strong> Hands-on Application and Engineering Logic.</li>
+          <li><strong>Duration:</strong> 2–3-hour session.</li>
+          <li>
+            <strong>Key Activities:</strong>
+            <ul class="pf-list pf-list-sub">
+              <li>Project Demonstrations: Showcasing functional builds like Line Follower Robots (LFR), CanSats, and RC Cars.</li>
+              <li>Technical Deep-Dive: Explaining hardware-software integration.</li>
+              <li>Robotic Activity: Live demonstrations of sensor-based logic.</li>
+              <li>Advanced Quiz: Technical assessment with excellence awards.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2 class="pf-h2">Long-Term Support Ecosystem</h2>
+        <p class="pf-p">Project Uddipon is committed to the "Lifetime Success" of our participants:</p>
+        <ul class="pf-list">
+          <li><strong>Resource Funding:</strong> Assisting underprivileged students with essential sensors and hardware accessories.</li>
+          <li><strong>Continuous Mentorship:</strong> Guiding to ensure students stay on track toward a career in technology.</li>
+          <li><strong>National Vision:</strong> Building a community of experts who will represent Bangladesh on the global stage.</li>
+        </ul>
+      </section>
+
+      <!-- ==================================================
+       PAGE 6 — PILOT IMPLEMENTATION / HOW WE WORK
+       ================================================== -->
+      <section class="report-page" data-title="Pilot Implementation">
+        <div class="pf-kicker">Section 05 — Pilot Results</div>
+        <h2 class="pf-h1">Pilot Implementation</h2>
+        <p class="pf-p"><strong>Regions Covered:</strong> Feni, Sylhet, Dhaka</p>
+
+        <h2 class="pf-h2">Institutions Engaged</h2>
+        <ul class="pf-list pf-institutions" id="pfInstitutions"></ul>
+
+        <h2 class="pf-h2">Analytics</h2>
+        <div class="pf-stats" id="pfStats"></div>
+        <ul class="pf-list">
+          <li>Identified high-potential students for mentorship.</li>
+          <li>Connected students with local science clubs.</li>
+          <li>Introduced AI, ML, and IoT concepts to rural communities.</li>
+        </ul>
+
+        <h2 class="pf-h2">How We Work</h2>
+        <div class="pf-steps">
+          <div class="pf-step pf-step-1"><div class="pf-step-num">01</div><div class="pf-step-label">Institute Selection</div></div>
+          <div class="pf-step pf-step-2"><div class="pf-step-num">02</div><div class="pf-step-label">Workshop Planning</div></div>
+          <div class="pf-step pf-step-3"><div class="pf-step-num">03</div><div class="pf-step-label">On-Site Projection</div></div>
+          <div class="pf-step pf-step-4"><div class="pf-step-num">04</div><div class="pf-step-label">STEM Setup</div></div>
+          <div class="pf-step pf-step-5"><div class="pf-step-num">05</div><div class="pf-step-label">Online Support</div></div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+       PAGE 7+ — SNAPSHOTS (dynamic, from WORKSHOPS)
+       One or more report pages are generated here at render time —
+       as many as it takes to fit every photo in WORKSHOPS, 9 per page,
+       so the grid never overflows a page no matter how many workshops
+       have been added. See assets/js/render-portfolio.js.
+       ================================================== -->
+      <div id="pfSnapPages"></div>
+
+      <!-- ==================================================
+       PAGE 8 — TEAM / CONDUCTED LIST
+       ================================================== -->
+      <section class="report-page" data-title="Conducted List">
+        <div class="pf-kicker">Section 07 — Our Team</div>
+        <h2 class="pf-h1">Conducted List</h2>
+        <p class="pf-p">Project Uddipon is led by ZAN Tech engineers, founders, and volunteers:</p>
+        <div class="pf-team-grid pf-team-roles">
+          <div class="pf-team-card"><span class="material-symbols-outlined">precision_manufacturing</span><span class="label">Robotics Engineers</span></div>
+          <div class="pf-team-card"><span class="material-symbols-outlined">code</span><span class="label">Software Developers</span></div>
+          <div class="pf-team-card"><span class="material-symbols-outlined">settings_suggest</span><span class="label">Automation Specialists</span></div>
+          <div class="pf-team-card"><span class="material-symbols-outlined">school</span><span class="label">STEM Educators</span></div>
+          <div class="pf-team-card"><span class="material-symbols-outlined">campaign</span><span class="label">Outreach &amp; Documentation</span></div>
+        </div>
+      </section>
+
+      <!-- ==================================================
+       PAGE 9 — LONG TERM TARGET / PARTNERSHIP VALUE / CONTACT
+       ================================================== -->
+      <section class="report-page" data-title="Long Term Target">
+        <div class="pf-kicker">Section 08 — Roadmap &amp; Contact</div>
+        <h2 class="pf-h1">Long Term Target</h2>
+        <p class="pf-p">Project Uddipon aims to:</p>
+        <ul class="pf-list">
+          <li>Reach 100,000+ students within 3 years.</li>
+          <li>Cover all 64 districts of Bangladesh.</li>
+          <li>Enable 40%+ female participation.</li>
+          <li>Establish 150+ STEM clubs.</li>
+          <li>Build a national skill pipeline for Robotics, IoT, and AI.</li>
+        </ul>
+
+        <h2 class="pf-h2">Partnership Value</h2>
+        <p class="pf-p">Organizations choose to support Project Uddipon because:</p>
+        <ul class="pf-list">
+          <li>It is scalable, low-cost, and high-impact.</li>
+          <li>It directly supports SDGs (Quality Education, Gender Equality, Decent Work, Industry Innovation).</li>
+          <li>It builds the future workforce Bangladesh urgently needs.</li>
+          <li>It benefits industries, communities, and national development.</li>
+          <li>It is run by a professional engineering company with both commercial and social expertise.</li>
+        </ul>
+
+        <h2 class="pf-h2">Contact Information</h2>
+        <div class="pf-contact-grid">
+          <div class="pf-contact-card">
+            <div class="cc-label">General Enquiries</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">call</span></span> 01894-634149, 01627-199815</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">mail</span></span> projectuddipon@gmail.com, zantechbd@gmail.com</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">language</span></span> projectuddipon.zantechbd.com</div>
+          </div>
+          <div class="pf-contact-card">
+            <div class="cc-label">Social &amp; Office</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">thumb_up</span></span> facebook.com/ZanTechBD</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">link</span></span> linkedin.com/company/zantechbd</div>
+            <div class="row"><span class="icon-badge"><span class="material-symbols-outlined">location_on</span></span> House 48, Road 9/C, Sector 5, Uttara, Dhaka</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="assets/js/workshops-data.js"></script>
+    <script src="assets/js/render-portfolio.js" defer></script>
+  </body>
+</html>

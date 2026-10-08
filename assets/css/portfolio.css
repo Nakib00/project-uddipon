@@ -1,0 +1,562 @@
+/* Project Uddipon — Portfolio / Program Report
+   Reuses the design tokens from styles.css (colors, fonts) and lays the
+   content out as a series of "report pages" that read like a formal,
+   printed corporate report on screen, and paginate cleanly to A4 when
+   printed / saved as PDF. */
+
+body.portfolio-body {
+  background: #D9DEE8;
+}
+
+/* ---------- Top toolbar (screen only) ---------- */
+.pf-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: var(--shadow-md);
+}
+.pf-toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+}
+.pf-toolbar-brand img { width: 30px; height: 30px; }
+.pf-toolbar-actions { display: flex; align-items: center; gap: 10px; }
+.pf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--r-xl);
+  font-family: var(--font-head);
+  font-size: .82rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--t-fast);
+}
+.pf-btn .material-symbols-outlined { font-size: 1.1rem; }
+.pf-btn-orange { background: var(--orange); color: #fff; box-shadow: 0 4px 14px rgba(254,101,0,.3); }
+.pf-btn-orange:hover { background: var(--orange-hover); }
+.pf-btn-ghost { background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.22); }
+.pf-btn-ghost:hover { background: rgba(255,255,255,.16); }
+.pf-btn[disabled] { opacity: .6; cursor: progress; }
+
+/* ---------- Print-dialog tip banner (screen only) ---------- */
+.pf-print-tip {
+  display: none;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 880px;
+  margin: 14px auto 0;
+  padding: 12px 16px;
+  background: var(--orange-soft);
+  border: 1px solid #FFD9B8;
+  border-radius: var(--r-md);
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--orange-deep);
+}
+.pf-print-tip.show { display: flex; }
+.pf-print-tip .material-symbols-outlined:first-child { font-size: 1.1rem; margin-top: 1px; flex: none; }
+.pf-print-tip span:nth-child(2) { flex: 1; }
+.pf-print-tip strong { font-weight: 700; }
+.pf-print-tip button {
+  flex: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--orange-deep);
+  opacity: .7;
+  padding: 0;
+  line-height: 1;
+}
+.pf-print-tip button:hover { opacity: 1; }
+
+/* ---------- Page shell (screen) ----------
+   Sized to the EXACT physical A4 page (210mm x 297mm) — not just an
+   880px box with the same ratio — so the screen preview is a true
+   WYSIWYG match for "Save as PDF": whatever wraps/fits at this width
+   on screen is exactly what wraps/fits on the printed page.
+   It's a min-height (not a fixed/clipped height), so a page with more
+   copy than fits (a long institutions list, a growing WORKSHOPS array,
+   …) simply grows taller instead of clipping content.
+   Deliberately NOT display:flex: Chromium's print-pagination engine
+   does not reliably fragment flex containers across page boundaries —
+   content that measured as fitting fine on screen (a flex column with
+   min-height) came out as extra, near-blank pages when actually
+   printed. A plain block box paginates predictably, so the footer
+   below is now just a normal block that follows the content in flow
+   instead of being flex-pushed to the bottom. */
+.pf-wrap { padding: 48px 16px 90px; }
+.report-page {
+  width: 100%;
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 40px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,26,72,.06), var(--shadow-xl);
+  position: relative;
+  padding: 40px 54px 22px;
+}
+.report-page::before {
+  /* fine paper-edge line, purely decorative */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0,26,72,.06);
+  pointer-events: none;
+}
+
+/* ---------- Repeating report header ---------- */
+.pf-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+.pf-head-brand { display: flex; align-items: center; gap: 10px; }
+.pf-head-brand img { width: 36px; height: 36px; }
+.pf-head-brand-text .name {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: .98rem;
+  color: var(--text);
+  letter-spacing: .03em;
+}
+.pf-head-brand-text .pf-head-tag { font-size: .66rem; color: var(--muted); letter-spacing: .01em; }
+.pf-head-contact { text-align: right; font-size: .7rem; color: var(--body); line-height: 1.55; }
+.pf-head-contact .addr { color: var(--text); }
+.pf-head-contact .row { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
+.pf-head-contact .row .material-symbols-outlined { font-size: .85rem; color: var(--red); }
+.pf-head-date {
+  font-family: var(--font-caps);
+  font-size: .64rem;
+  letter-spacing: .04em;
+  color: var(--navy);
+  margin-top: 4px;
+}
+
+.pf-rule { display: flex; height: 3px; margin-bottom: 22px; flex: none; }
+.pf-rule span:first-child { width: 120px; background: var(--red); }
+.pf-rule span:last-child { flex: 1; background: var(--dark); }
+
+/* running section label, top-right of the rule on content pages */
+.pf-kicker {
+  font-family: var(--font-caps);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--orange-deep);
+  margin-bottom: 6px;
+}
+
+/* ---------- Footer lockup ----------
+   The whole footer (page number + logo + the navy bar) is pinned
+   together as ONE absolutely-positioned block at the true bottom of
+   the page, rather than letting the row sit in normal flow (which
+   floated it right up against the content, leaving it stranded far
+   above the bar on any page with slack — a disjointed, broken-looking
+   footer) or using margin-top:auto (which Chromium's print-pagination
+   pass doesn't resolve per physical page, orphaning the footer onto
+   its own almost-blank next page on dense content). Plain absolute
+   positioning removes the whole block from flow, so it can't affect —
+   or be mis-measured by — pagination at all, and every page's content
+   has been checked to comfortably fit above it with room to spare. */
+.pf-footer {
+  position: absolute;
+  left: 54px;
+  right: 54px;
+  bottom: 22px;
+}
+.pf-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pf-foot { display: flex; align-items: center; gap: 8px; opacity: .92; }
+.pf-foot img { height: 26px; }
+.pf-page-num {
+  font-family: var(--font-caps);
+  font-size: .64rem;
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+.pf-page-num b { color: var(--navy); }
+.pf-bar {
+  /* Contained within the page's own padding — NOT bled out to the
+     physical paper edge. A real browser Print dialog does not
+     guarantee "Margins: None"; with any other margin setting, content
+     pushed past the page's own padding via negative offsets lands in
+     that margin and gets silently clipped, which read as "the footer
+     is broken" in an actual printed/saved PDF even though it looked
+     correct when the print engine was forced into zero-margin mode
+     for testing. Keeping the bar inside the safe content area means
+     it survives whatever margin the person printing has selected. */
+  margin-top: 14px;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 55%, var(--blue) 100%);
+}
+
+/* ---------- Cover page ----------
+   Plain block flow throughout — even though the cover always fits one
+   page, nesting a flex column anywhere inside .report-page was enough
+   to confuse Chromium's print-pagination engine for the WHOLE element
+   (see the note on .report-page above), so spacing here is done with
+   plain margins instead of flex centering. */
+.pf-cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.pf-cover-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-caps);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--navy-soft);
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+}
+.pf-cover-mid {
+  text-align: center;
+  margin: 110px 0 90px;
+}
+.pf-cover-mark { width: 220px; margin: 0 auto 14px; }
+.pf-cover-tagline { font-size: .88rem; color: var(--orange-deep); font-weight: 600; }
+.pf-cover-bottom { padding-bottom: 6px; }
+.pf-cover-title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  max-width: 520px;
+  line-height: 1.15;
+}
+.pf-cover-sub {
+  font-size: .86rem;
+  color: var(--body);
+  margin-top: 10px;
+  max-width: 460px;
+}
+.pf-cover-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-caps);
+  font-size: .68rem;
+  color: var(--muted);
+  letter-spacing: .03em;
+}
+.pf-cover-meta strong { color: var(--navy); font-weight: 700; }
+
+/* ---------- Typography ---------- */
+.pf-h1 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -.01em;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-left: 14px;
+  border-left: 4px solid var(--orange);
+}
+.pf-h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--navy);
+  margin: 18px 0 8px;
+  letter-spacing: -.005em;
+}
+.pf-p { font-size: .85rem; line-height: 1.6; color: var(--body); margin-bottom: 11px; text-align: justify; hyphens: auto; }
+.pf-list { margin: 0 0 4px; padding-left: 0; }
+.pf-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--body);
+  margin-bottom: 7px;
+  text-align: justify;
+}
+.pf-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: .62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.pf-list.pf-list-sub { margin: 4px 0 2px; }
+.pf-list.pf-list-sub li { font-size: .8rem; padding-left: 16px; margin-bottom: 5px; }
+.pf-list.pf-list-sub li::before {
+  background: transparent;
+  border: 1.5px solid var(--navy);
+  width: 4px;
+  height: 4px;
+  top: .6em;
+}
+.pf-list li strong { color: var(--text); font-weight: 600; }
+
+.pf-institutions {
+  columns: 2;
+  column-gap: 36px;
+  margin: 4px 0 8px;
+  counter-reset: inst;
+}
+.pf-institutions li {
+  break-inside: avoid;
+  padding-left: 0;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--rule);
+  counter-increment: inst;
+}
+.pf-institutions li::before { display: none; }
+.pf-institutions li::after {
+  content: counter(inst, decimal-leading-zero);
+  font-family: var(--font-caps);
+  font-size: .68rem;
+  color: var(--orange-deep);
+  font-weight: 700;
+  margin-right: 8px;
+}
+.pf-institutions li {
+  display: flex;
+  align-items: baseline;
+}
+.pf-institutions li::after { order: -1; }
+
+/* ---------- "How We Work" steps ---------- */
+.pf-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+.pf-step {
+  background: linear-gradient(135deg, var(--step-a), var(--step-b));
+  color: #fff;
+  padding: 13px 10px 11px;
+  clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%, 12% 50%);
+}
+.pf-step:first-child { clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%); }
+.pf-step-num { font-family: var(--font-head); font-weight: 800; font-size: 1.05rem; opacity: .85; }
+.pf-step-label { font-family: var(--font-head); font-weight: 700; font-size: .72rem; margin-top: 3px; }
+.pf-step-1 { --step-a: #9aa0a6; --step-b: #7c8288; }
+.pf-step-2 { --step-a: #cf9a2e; --step-b: #b9811f; }
+.pf-step-3 { --step-a: #c17a1e; --step-b: #a8650f; }
+.pf-step-4 { --step-a: #c05a1a; --step-b: #a1460c; }
+.pf-step-5 { --step-a: #c23a1a; --step-b: #a12a0c; }
+
+/* ---------- Stat chips ---------- */
+.pf-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px 0 6px;
+}
+.pf-stat {
+  background: var(--navy-soft);
+  border-radius: var(--r-md);
+  padding: 10px 8px;
+  text-align: center;
+  border-top: 3px solid var(--navy);
+}
+.pf-stat-num { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: var(--navy); }
+.pf-stat-label {
+  font-size: .62rem;
+  color: var(--body);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+/* ---------- Snapshot grid ---------- */
+.pf-snap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+.pf-snap {
+  /* Square photo tile via the "padding-bottom: 100%" intrinsic-ratio
+     technique rather than the modern `aspect-ratio` property — Chromium's
+     print-pagination pass did not reliably honor aspect-ratio, letting
+     these boxes collapse to each photo's full natural (large) size and
+     blow the page budget by several times over. padding-bottom is the
+     old, universally-supported way to force a ratio and renders
+     identically on screen and in print. */
+  position: relative;
+  border-radius: var(--r-xs);
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 100%;
+  background: var(--surface);
+  box-shadow: var(--shadow-xs);
+  border: 1px solid var(--border);
+}
+.pf-snap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pf-snap-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,10,30,.88), transparent);
+  color: #fff; font-size: .62rem; font-weight: 500; line-height: 1.3; padding: 20px 8px 7px;
+}
+
+/* ---------- Team directory ---------- */
+.pf-team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
+.pf-team-grid.pf-team-roles { grid-template-columns: repeat(3, 1fr); }
+.pf-team-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+}
+.pf-team-avatar {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .78rem;
+}
+.pf-team-roles .pf-team-card .material-symbols-outlined { color: var(--orange); font-size: 1.15rem; }
+.pf-team-card .label { font-size: .78rem; color: var(--text); font-weight: 600; line-height: 1.35; }
+.pf-team-card .role { display: block; font-size: .68rem; color: var(--muted); font-weight: 400; margin-top: 1px; }
+
+/* ---------- Contact block ---------- */
+.pf-contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 14px; }
+.pf-contact-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+  border-radius: var(--r-md);
+  padding: 16px 18px;
+}
+.pf-contact-card .cc-label {
+  font-family: var(--font-caps);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.pf-contact-card .row { display: flex; align-items: center; gap: 9px; font-size: .82rem; color: var(--text); margin-bottom: 9px; }
+.pf-contact-card .row:last-child { margin-bottom: 0; }
+.pf-contact-card .icon-badge {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--navy-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pf-contact-card .icon-badge .material-symbols-outlined { color: var(--navy); font-size: .95rem; }
+
+/* ---------- Print / PDF export ---------- */
+@media print {
+  /* Browsers drop background colors/images on print by default (stat
+     chips, the footer's navy bar, snapshot caption gradients, eyebrow
+     pills, …) unless told otherwise — this forces exact reproduction
+     so "Save as PDF" actually matches what's on screen, with no need
+     for the person printing to find and tick "Background graphics". */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  .pf-toolbar { display: none !important; }
+  .pf-print-tip { display: none !important; }
+  body.portfolio-body { background: #fff; }
+  .pf-wrap { padding: 0; }
+  .report-page {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    width: 210mm;
+    min-height: 297mm;
+    page-break-after: always;
+  }
+  .report-page::before { display: none; }
+  .report-page:last-child { page-break-after: auto; }
+
+  /* Chromium's print layout pass measured this page as narrower than
+     the 760px mobile breakpoint even though the physical page is
+     210mm (~794px) wide, which silently wrapped the 5-step chevron
+     row to 2 columns — the angled chevron shapes only make sense
+     laid out in one unbroken row, so wrapping made them overlap.
+     Force the intended column counts regardless of that measurement. */
+  .pf-steps { grid-template-columns: repeat(5, 1fr) !important; }
+  .pf-stats { grid-template-columns: repeat(4, 1fr) !important; }
+  .pf-snap-grid { grid-template-columns: repeat(3, 1fr) !important; }
+  .pf-institutions { columns: 2 !important; }
+  .pf-team-grid.pf-team-roles { grid-template-columns: repeat(3, 1fr) !important; }
+  .pf-team-grid:not(.pf-team-roles) { grid-template-columns: repeat(2, 1fr) !important; }
+  .pf-contact-grid { grid-template-columns: 1fr 1fr !important; }
+  .pf-head { flex-direction: row !important; }
+  .pf-head-contact { text-align: right !important; }
+  .pf-head-contact .row { justify-content: flex-end !important; }
+  .pf-p, .pf-list li { text-align: justify !important; }
+}
+@page { size: A4; margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .report-page { min-height: 0; padding: 30px 22px 60px; }
+  .pf-footer { left: 22px; right: 22px; bottom: 18px; }
+  .pf-head { flex-direction: column; }
+  .pf-head-contact { text-align: left; }
+  .pf-head-contact .row { justify-content: flex-start; }
+  .pf-p, .pf-list li { text-align: left; }
+  .pf-steps { grid-template-columns: 1fr 1fr; }
+  .pf-stats { grid-template-columns: 1fr 1fr; }
+  .pf-snap-grid { grid-template-columns: repeat(2, 1fr); }
+  .pf-institutions { columns: 1; }
+  .pf-team-grid, .pf-team-grid.pf-team-roles { grid-template-columns: 1fr; }
+  .pf-contact-grid { grid-template-columns: 1fr; }
+  .pf-foot img { height: 22px; }
+  .pf-cover-title { font-size: 1.5rem; }
+}
