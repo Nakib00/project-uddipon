@@ -5,7 +5,7 @@
    printed / saved as PDF. */
 
 body.portfolio-body {
-  background: #D9DEE8;
+  background: #E3E8EF;
 }
 
 /* ---------- Top toolbar (screen only) ---------- */
@@ -63,7 +63,7 @@ body.portfolio-body {
   margin: 14px auto 0;
   padding: 12px 16px;
   background: var(--orange-soft);
-  border: 1px solid #FFD9B8;
+  border: 1px solid rgba(237,38,38,.25);
   border-radius: var(--r-md);
   font-size: .82rem;
   line-height: 1.55;
@@ -132,12 +132,19 @@ body.portfolio-body {
 .pf-head-brand img { width: 36px; height: 36px; }
 .pf-head-brand-text .name {
   font-family: var(--font-head);
-  font-weight: 800;
-  font-size: .98rem;
+  font-weight: 700;
+  font-size: 1rem;
   color: var(--text);
-  letter-spacing: .03em;
+  letter-spacing: .08em;
 }
-.pf-head-brand-text .pf-head-tag { font-size: .66rem; color: var(--muted); letter-spacing: .01em; }
+.pf-head-brand-text .name b { color: var(--red); font-weight: 700; }
+.pf-head-brand-text .pf-head-tag {
+  font-family: var(--font-caps);
+  font-size: .56rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
 .pf-head-contact { text-align: right; font-size: .7rem; color: var(--body); line-height: 1.55; }
 .pf-head-contact .addr { color: var(--text); }
 .pf-head-contact .row { display: flex; align-items: center; justify-content: flex-end; gap: 5px; }
@@ -161,7 +168,7 @@ body.portfolio-body {
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--orange-deep);
+  color: var(--blue);
   margin-bottom: 6px;
 }
 
@@ -210,7 +217,7 @@ body.portfolio-body {
   margin-top: 14px;
   height: 6px;
   border-radius: 3px;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 55%, var(--blue) 100%);
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-mid) 45%, var(--blue) 80%, var(--red) 100%);
 }
 
 /* ---------- Cover page ----------
@@ -366,11 +373,11 @@ body.portfolio-body {
 .pf-step:first-child { clip-path: polygon(0 0, 88% 0, 100% 50%, 88% 100%, 0 100%); }
 .pf-step-num { font-family: var(--font-head); font-weight: 800; font-size: 1.05rem; opacity: .85; }
 .pf-step-label { font-family: var(--font-head); font-weight: 700; font-size: .72rem; margin-top: 3px; }
-.pf-step-1 { --step-a: #9aa0a6; --step-b: #7c8288; }
-.pf-step-2 { --step-a: #cf9a2e; --step-b: #b9811f; }
-.pf-step-3 { --step-a: #c17a1e; --step-b: #a8650f; }
-.pf-step-4 { --step-a: #c05a1a; --step-b: #a1460c; }
-.pf-step-5 { --step-a: #c23a1a; --step-b: #a12a0c; }
+.pf-step-1 { --step-a: #1c2436; --step-b: #0b0f19; }
+.pf-step-2 { --step-a: #155e75; --step-b: #123c4f; }
+.pf-step-3 { --step-a: #0e7490; --step-b: #0b5f77; }
+.pf-step-4 { --step-a: #0891b2; --step-b: #0e7490; }
+.pf-step-5 { --step-a: #ed2626; --step-b: #c81e1e; }
 
 /* ---------- Stat chips ---------- */
 .pf-stats {
@@ -384,7 +391,7 @@ body.portfolio-body {
   border-radius: var(--r-md);
   padding: 10px 8px;
   text-align: center;
-  border-top: 3px solid var(--navy);
+  border-top: 3px solid var(--blue);
 }
 .pf-stat-num { font-family: var(--font-head); font-weight: 800; font-size: 1.2rem; color: var(--navy); }
 .pf-stat-label {
@@ -512,16 +519,22 @@ body.portfolio-body {
   .pf-print-tip { display: none !important; }
   body.portfolio-body { background: #fff; }
   .pf-wrap { padding: 0; }
+  html, body { width: 210mm; margin: 0; padding: 0; }
   .report-page {
     box-shadow: none;
     margin: 0;
     max-width: none;
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;          /* exactly one sheet — header top, footer bottom */
+    min-height: 0;
+    overflow: hidden;       /* never spill onto a second, near-blank sheet */
     page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
   .report-page::before { display: none; }
-  .report-page:last-child { page-break-after: auto; }
+  .report-page:last-child { page-break-after: auto; break-after: auto; }
 
   /* Chromium's print layout pass measured this page as narrower than
      the 760px mobile breakpoint even though the physical page is
@@ -543,8 +556,12 @@ body.portfolio-body {
 }
 @page { size: A4; margin: 0; }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 760px) {
+/* ---------- Responsive (screens only) ----------
+   Scoped to `screen` on purpose: Chromium lays the print page out
+   narrower than 760px, so an unscoped query also matched while
+   printing and set .report-page{min-height:0} — every PDF page shrank
+   to its content and the footer floated ~60% down the paper. */
+@media screen and (max-width: 760px) {
   .report-page { min-height: 0; padding: 30px 22px 60px; }
   .pf-footer { left: 22px; right: 22px; bottom: 18px; }
   .pf-head { flex-direction: column; }
@@ -560,3 +577,98 @@ body.portfolio-body {
   .pf-foot img { height: 22px; }
   .pf-cover-title { font-size: 1.5rem; }
 }
+
+
+/* ---------- ZAN Tech cover (overrides the plain cover above) ----------
+   Full-bleed navy sheet with the circuit grid and cyan glow used across
+   every ZAN Tech site. Still plain block flow (see notes above) — only
+   decorative layers are absolutely positioned. */
+.report-page.pf-cover-page {
+  background: #0B0F19;
+  color: #CBD5E1;
+  overflow: hidden;
+  padding: 0;
+}
+.pf-cover-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.pf-cover-glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -170px;
+  top: -170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,240,255,.2), transparent 65%);
+  pointer-events: none;
+}
+.pf-cover-photo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 44%;
+  overflow: hidden;
+}
+.pf-cover-photo img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .55; }
+.pf-cover-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0B0F19 0%, rgba(11,15,25,.55) 45%, rgba(11,15,25,.9) 100%);
+}
+.pf-cover { position: relative; z-index: 1; padding: 46px 54px 0; }
+.pf-cover-brand { display: flex; align-items: center; gap: 10px; }
+.pf-cover-brand img { width: 40px; height: 40px; }
+.pf-cover-brand .name { font-family: var(--font-head); font-weight: 700; letter-spacing: .08em; color: #fff; font-size: 1.05rem; line-height: 1; }
+.pf-cover-brand .name b { color: var(--red); }
+.pf-cover-brand-tag { font-family: var(--font-caps); font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: #00F0FF; margin-top: 4px; }
+.pf-cover-page .pf-cover-top { margin-top: 34px; }
+.pf-cover-page .pf-cover-eyebrow { background: rgba(0,240,255,.08); color: #00F0FF; border: 1px solid rgba(0,240,255,.3); }
+.pf-cover-page .pf-cover-mid { text-align: left; margin: 60px 0 0; }
+.pf-cover-page .pf-cover-mark { width: 250px; margin: 0 0 16px; filter: brightness(0) invert(1); }
+.pf-cover-page .pf-cover-tagline { color: #F5B301; font-size: .95rem; }
+.pf-cover-page .pf-cover-bottom { margin-top: 36px; }
+.pf-cover-page .pf-cover-title { color: #fff; font-size: 2.5rem; font-weight: 700; max-width: 560px; }
+.pf-cover-page .pf-cover-title span { color: #00F0FF; }
+.pf-cover-page .pf-cover-sub { color: #CBD5E1; font-size: .92rem; max-width: 500px; }
+.pf-cover-stats { display: flex; gap: 28px; margin-top: 26px; }
+.pf-cover-stats div b { display: block; font-family: var(--font-head); font-size: 1.6rem; color: #fff; line-height: 1; }
+.pf-cover-stats div span { font-family: var(--font-caps); font-size: .55rem; letter-spacing: .12em; text-transform: uppercase; color: #94A3B8; }
+.pf-cover-page .pf-cover-meta {
+  position: absolute;
+  left: 54px;
+  right: 54px;
+  bottom: 70px;
+  margin: 0;
+  z-index: 1;
+  border-top: 1px solid rgba(255,255,255,.14);
+  color: #94A3B8;
+}
+.pf-cover-page .pf-cover-meta strong { color: #fff; }
+/* the generic footer on the cover: light text on the dark sheet */
+.pf-cover-page .pf-footer { z-index: 1; }
+.pf-cover-page .pf-page-num { color: #94A3B8; }
+.pf-cover-page .pf-page-num b { color: #fff; }
+.pf-cover-page .pf-foot img { filter: brightness(0) invert(1); }
+
+@media screen and (max-width: 760px) {
+  .pf-cover { padding: 30px 22px 0; }
+  .report-page.pf-cover-page { min-height: 720px; }
+  .pf-cover-page .pf-cover-title { font-size: 1.7rem; }
+  .pf-cover-page .pf-cover-meta { left: 22px; right: 22px; flex-wrap: wrap; gap: 8px; }
+  .pf-cover-stats { gap: 18px; }
+}
+
+/* Chevron steps: keep labels clear of the notch cut into each arrow */
+.pf-step:not(:first-child) { padding-left: 20px; }
+.pf-step { padding-right: 16px; }
+/* Short list items like institution names read better left-aligned */
+.pf-institutions li { text-align: left !important; }

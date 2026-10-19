@@ -50,7 +50,7 @@
       <div class="pf-head-brand">
         <img src="assets/images/partners/zantech-logo.png" alt="ZAN Tech" />
         <div class="pf-head-brand-text">
-          <div class="name">ZAN TECH</div>
+          <div class="name">ZAN<b>TECH</b></div>
           <div class="pf-head-tag">Awaken Your Hidden Talent</div>
         </div>
       </div>
@@ -77,13 +77,27 @@
   `;
 
   pages.forEach((page, i) => {
-    page.insertAdjacentHTML("afterbegin", headerHTML());
+    // The cover has its own brand lockup — no running header there
+    if (!page.classList.contains("pf-cover-page")) page.insertAdjacentHTML("afterbegin", headerHTML());
     page.insertAdjacentHTML("beforeend", footerHTML(i + 1, pages.length));
   });
 
   const coverDateEl = document.getElementById("pfCoverDate");
   if (coverDateEl && typeof PROGRAM_STATS !== "undefined") {
     coverDateEl.textContent = PROGRAM_STATS.reportDate;
+  }
+
+  /* Headline numbers on the cover */
+  const coverStats = document.getElementById("pfCoverStats");
+  if (coverStats && typeof PROGRAM_STATS !== "undefined") {
+    coverStats.innerHTML = [
+      [PROGRAM_STATS.studentsReached, "Students reached"],
+      [String(PROGRAM_STATS.institutionsVisited) + "+", "Institutions"],
+      [PROGRAM_STATS.femaleParticipation, "Girls participating"],
+      [PROGRAM_STATS.goalDistricts, "District goal"],
+    ]
+      .map(([num, label]) => `<div><b>${num}</b><span>${label}</span></div>`)
+      .join("");
   }
 
   /* Institutions engaged */
