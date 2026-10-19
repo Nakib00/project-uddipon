@@ -672,3 +672,48 @@ body.portfolio-body {
 .pf-step { padding-right: 16px; }
 /* Short list items like institution names read better left-aligned */
 .pf-institutions li { text-align: left !important; }
+
+/* ---------- Phones: compact toolbar, readable pages ---------- */
+@media screen and (max-width: 600px) {
+  .pf-toolbar { padding: 10px 14px; gap: 10px; }
+  .pf-toolbar-brand { font-size: .9rem; min-width: 0; }
+  .pf-toolbar-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pf-toolbar-sub,
+  .pf-btn-text,
+  .pf-btn-text-full { display: none; }
+  .pf-toolbar-actions { gap: 8px; flex-shrink: 0; }
+  .pf-btn { padding: 9px 12px; border-radius: 10px; }
+  .pf-btn-ghost { padding: 9px 10px; }
+
+  .pf-print-tip { margin: 10px 12px 0; }
+  .pf-wrap { padding: 16px 10px 40px; }
+  .report-page { margin-bottom: 16px; border-radius: 10px; overflow: hidden; }
+
+  /* Running header: logo + date only, contact lines are on the last page */
+  .pf-head-contact .addr,
+  .pf-head-contact .row { display: none; }
+  .pf-head { flex-direction: row; align-items: center; }
+  .pf-head-contact { text-align: right; }
+
+  .pf-h1 { font-size: 1.15rem; }
+  .pf-p, .pf-list li { font-size: .9rem; }
+
+  .pf-cover-top { flex-wrap: wrap; gap: 8px; }
+  .pf-cover-page .pf-cover-eyebrow { font-size: .56rem; padding: 5px 10px; }
+  .pf-cover-page .pf-cover-mid { margin-top: 36px; }
+  .pf-cover-page .pf-cover-mark { width: 190px; }
+  .pf-cover-stats { flex-wrap: wrap; row-gap: 14px; }
+  .pf-cover-stats div { min-width: 40%; }
+  .pf-cover-page .pf-cover-meta { bottom: 64px; font-size: .58rem; }
+  .report-page.pf-cover-page { min-height: 760px; }
+  /* leave room for the meta line + footer pinned to the cover's bottom */
+  .pf-cover { padding-bottom: 150px; }
+
+  .pf-steps { grid-template-columns: 1fr; gap: 6px; }
+  .pf-step,
+  .pf-step:first-child { clip-path: none; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; gap: 12px; }
+  .pf-step:not(:first-child) { padding-left: 14px; }
+  .pf-step-label { margin-top: 0; font-size: .82rem; }
+  .pf-snap-grid { gap: 8px; }
+  .pf-snap-cap { font-size: .58rem; }
+}
