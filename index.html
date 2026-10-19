@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&family=Hind+Siliguri:wght@600;700&family=JetBrains+Mono:wght@500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -28,10 +28,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Project Uddipon – STEM & Robotics Initiative by ZAN Tech"
-    />
+    <meta property="og:title" content="Project Uddipon – STEM & Robotics Initiative by ZAN Tech" />
     <meta
       property="og:description"
       content="Free Robotics, Programming, AI & STEM bootcamps for students across Bangladesh."
@@ -39,22 +36,19 @@
     <meta property="og:url" content="https://projectuddipon.zantechbd.com/" />
     <meta property="og:image" content="assets/images/social-share.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Project Uddipon – STEM & Robotics Initiative by ZAN Tech"
-    />
+    <meta name="twitter:title" content="Project Uddipon – STEM & Robotics Initiative by ZAN Tech" />
     <meta name="twitter:image" content="assets/images/social-share.jpg" />
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon.png" />
     <link rel="apple-touch-icon" href="assets/images/favicon-192.png" />
-    <meta name="theme-color" content="#001A48" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <meta name="theme-color" content="#0b0f19" />
+    <link rel="stylesheet" href="assets/css/site.css" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
         "name": "Project Uddipon",
-        "url": "https://zantechbd.com/uddipon",
+        "url": "https://projectuddipon.zantechbd.com/",
         "founder": "ZAN Tech",
         "sameAs": [
           "https://www.facebook.com/ZanTechBD",
@@ -66,1068 +60,537 @@
     </script>
   </head>
   <body>
-    <!-- ======================================================
-     TOP BAR
-     ====================================================== -->
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <span class="topbar-item">
-          <span class="material-symbols-outlined">call</span>
-          <a href="tel:+8801894634149">01894-634149</a>
-        </span>
-        <span class="topbar-sep">|</span>
-        <span class="topbar-item">
-          <span class="material-symbols-outlined">mail</span>
-          <a href="mailto:zantechbd@gmail.com">zantechbd@gmail.com</a>
-        </span>
-        <span class="topbar-sep">|</span>
-        <span class="topbar-item">
-          <span class="material-symbols-outlined">location_on</span>
-          Uttara, Dhaka, Bangladesh
-        </span>
-        <div class="topbar-social">
-          <a
-            href="https://www.facebook.com/ZanTechBD"
-            target="_blank"
-            rel="noopener"
-            aria-label="Facebook"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a
-            href="https://instagram.com/zantechbd"
-            target="_blank"
-            rel="noopener"
-            aria-label="Instagram"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            href="https://youtube.com/@ZANTechBD"
-            target="_blank"
-            rel="noopener"
-            aria-label="YouTube"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/company/zantechbd"
-            target="_blank"
-            rel="noopener"
-            aria-label="LinkedIn"
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
+    <!-- ================= UTILITY BAR ================= -->
+    <div class="utility">
+      <div class="container utility-inner">
+        <span class="utility-tag">A ZAN Tech initiative</span>
+        <a class="utility-item" href="tel:+8801894634149"
+          ><span class="material-symbols-outlined">call</span> 01894-634149</a
+        >
+        <a class="utility-item utility-hide-md" href="mailto:zantechbd@gmail.com"
+          ><span class="material-symbols-outlined">mail</span> zantechbd@gmail.com</a
+        >
+        <span class="utility-item utility-hide-md"
+          ><span class="material-symbols-outlined">location_on</span> Uttara, Dhaka</span
+        >
+        <div class="utility-social">
+          <a href="https://www.facebook.com/ZanTechBD" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com/zantechbd" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com/@ZANTechBD" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/zantechbd" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
     </div>
 
-    <!-- ======================================================
-     NAVBAR
-     ====================================================== -->
-    <header class="site-header" id="top">
+    <!-- ================= HEADER ================= -->
+    <header class="header" id="top">
       <div class="container header-inner">
-        <a href="#top" class="brand">
-          <img
-            src="assets/images/logo-uddipon.png"
-            alt="Project Uddipon logo"
-            class="brand-logo"
-          />
-          <span class="brand-subtitle">by ZAN Tech</span>
+        <a href="#top" class="brand" aria-label="Project Uddipon home">
+          <img src="assets/images/logo-uddipon.png" alt="Project Uddipon" />
+          <span class="brand-by">by <b>ZAN<i>TECH</i></b></span>
         </a>
-        <nav class="nav" aria-label="Main navigation">
-          <button
-            class="nav-toggle"
-            id="navToggle"
-            aria-label="Toggle navigation"
-          >
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-links" id="navLinks">
-            <li><a href="#about">About</a></li>
-            <li><a href="#programs">Programs</a></li>
-            <li><a href="#impact">Impact</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#donate" class="nav-cta-donate"
-              ><span class="material-symbols-outlined" style="font-size: 1rem"
-                >favorite</span
-              >
-              Donate</a
-            ></li>
-            <li><a href="#contact" class="nav-cta-blue">Invite Uddipon</a></li>
-            <li>
-              <a
-                href="portfolio.html"
-                target="_blank"
-                rel="noopener"
-                class="nav-cta-orange"
-                ><span class="material-symbols-outlined" style="font-size: 1rem"
-                  >folder_open</span
-                >
-                View Portfolio</a
-              >
-            </li>
-          </ul>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <nav class="nav" id="navLinks" aria-label="Main navigation">
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#programs">Programmes</a>
+          <a class="nav-link" href="#reach">Our Reach</a>
+          <a class="nav-link" href="#stories">Stories</a>
+          <a class="nav-link" href="#team">Team</a>
+          <a class="nav-link" href="#get-involved">Get Involved</a>
+          <div class="header-cta">
+            <a href="#contact" class="btn btn-line">Invite Uddipon</a>
+            <a href="#donate" class="btn btn-red"
+              ><span class="material-symbols-outlined">favorite</span> Donate</a
+            >
+          </div>
         </nav>
+        <div class="nav-scrim" id="navScrim"></div>
       </div>
     </header>
 
     <main>
-      <!-- ======================================================
-     HERO
-     ====================================================== -->
+      <!-- ================= HERO ================= -->
       <section class="hero">
-        <div class="container hero-grid">
-          <!-- Left: Content -->
-          <div>
-            <div class="hero-eyebrow">
-              <span class="material-symbols-outlined">verified_user</span>
-              A ZAN Tech Social Impact Initiative
-            </div>
-            <h1 class="hero-title">
-              Igniting <em>STEM</em> <em>Education</em> Across Bangladesh
+        <div class="hero-media">
+          <img
+            src="https://raw.githubusercontent.com/ZAN-Tech-bd/workshop-Image/refs/heads/main/Sonagazi%20girls%20pilot%20high%20school/20251101_120910.jpg"
+            alt="Students at a Project Uddipon robotics workshop in Bangladesh"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="hero-grid-lines"></div>
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge"
+              ><span class="material-symbols-outlined">bolt</span> Free STEM education for every student</span
+            >
+            <h1>
+              Igniting <span class="accent">STEM</span> across Bangladesh
+              <span class="bn">প্রজেক্ট উদ্দীপন</span>
             </h1>
             <p class="hero-lead">
-              Delivering free, hands-on Robotics, Programming, AI &amp; IoT
-              workshops to schools, colleges and universities nationwide — to
-              build a smarter future.
+              Free, hands-on Robotics, Programming, AI &amp; IoT workshops for
+              schools, colleges and universities — so no talented student is
+              left behind.
             </p>
-
-            <div class="btn-group" style="margin-top: 8px">
-              <a href="#contact" class="btn btn-blue">
-                <span class="material-symbols-outlined">send</span> Invite
-                Uddipon to Your Institution
-              </a>
-              <a href="#get-involved" class="btn btn-outline-blue">
-                Explore Partnership
-              </a>
-            </div>
-          </div>
-
-          <!-- Right: Photo -->
-          <div class="hero-image-wrap">
-            <div class="hero-photo image-zoom">
-              <img
-                src="https://raw.githubusercontent.com/ZAN-Tech-bd/workshop-Image/refs/heads/main/Sonagazi%20girls%20pilot%20high%20school/20251101_120910.jpg"
-                alt="Students at a Project Uddipon robotics workshop in Bangladesh"
-                loading="eager"
-              />
-              <div class="hero-photo-overlay"></div>
-              <div class="hero-photo-logo">Project <span>উদ্দীপন</span></div>
-              <div class="hero-photo-caption">
-                <p class="hero-photo-caption-label">
-                  SONAGAZI GIRLS' PILOT HIGH SCHOOL, FENI
-                </p>
-                <h3 class="hero-photo-caption-title">
-                  Hands-on Robotics &amp; AI Immersion
-                </h3>
-              </div>
-            </div>
-            <!-- Floating stat card -->
-            <div class="hero-float-card">
-              <div class="hero-float-number">80+</div>
-              <div class="hero-float-label">
-                Average students<br />per session
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     NUMBERS STRIP
-     ====================================================== -->
-      <section id="impact" class="numbers-strip">
-        <div class="container numbers-grid reveal">
-          <div class="numbers-item">
-            <div class="numbers-value" data-target="5000">5000+</div>
-            <div class="numbers-label">Students Reached</div>
-          </div>
-          <div class="numbers-item">
-            <div class="numbers-value" data-target="15">15+</div>
-            <div class="numbers-label">Institutions Visited</div>
-          </div>
-          <div class="numbers-item">
-            <div class="numbers-value">3+</div>
-            <div class="numbers-label">Districts Covered</div>
-          </div>
-          <div class="numbers-item">
-            <div class="numbers-value accent">Free</div>
-            <div class="numbers-label">Always &amp; for All</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     INSTITUTIONS TRUST STRIP
-     ====================================================== -->
-      <div class="trust-strip">
-        <div class="container trust-strip-inner">
-          <span class="trust-strip-label">Conducted at</span>
-          <div class="trust-strip-divider"></div>
-          <div class="trust-strip-list">
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span> Feni
-              Govt College</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span>
-              Scholastica School</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span> IUB
-              Fab Lab</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span>
-              Adamjee Cantonment</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span>
-              IUBAT</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span>
-              Sreemangal Govt College</span
-            >
-            <span class="trust-strip-item"
-              ><span class="material-symbols-outlined">check_circle</span>
-              Sunshine HS &amp; College</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <!-- ======================================================
-     ABOUT / MISSION
-     ====================================================== -->
-      <section id="about" class="section">
-        <div class="container about-grid reveal">
-          <!-- Text -->
-          <div class="about-content">
-            <span class="eyebrow"
-              ><span class="material-symbols-outlined">info</span> Our
-              Mission</span
-            >
-            <h2 class="h-section" style="margin-bottom: 16px">
-              We Bring the Lab to the Classroom
-            </h2>
-            <p
-              style="color: var(--body); line-height: 1.75; margin-bottom: 14px"
-            >
-              Project Uddipon (<strong>উদ্দীপন</strong> — "inspiration" or
-              "ignition") is a nationwide STEM empowerment initiative by
-              <strong>ZAN Tech</strong>. We design and deliver free,
-              high-quality workshops on Robotics, Programming, AI/ML and IoT for
-              students across Bangladesh.
-            </p>
-
-            <div class="mission-pull">
-              "Ensuring that no talented Bangladeshi student is left behind in
-              the Fourth Industrial Revolution — regardless of geography, gender
-              or income."
-            </div>
-
-            <ul class="about-checklist" style="margin-top: 20px">
-              <li>
-                <span class="material-symbols-outlined">check_circle</span> 100%
-                free for all participating students and institutions
-              </li>
-              <li>
-                <span class="material-symbols-outlined">check_circle</span>
-                Delivered by practicing engineers from ZAN Tech
-              </li>
-              <li>
-                <span class="material-symbols-outlined">check_circle</span> All
-                robotics kits, materials and equipment brought by our team
-              </li>
-              <li>
-                <span class="material-symbols-outlined">check_circle</span>
-                Nearly half of all participants across our programs are girls
-              </li>
-              <li>
-                <span class="material-symbols-outlined">check_circle</span>
-                Post-workshop STEM club setup and ongoing mentorship
-              </li>
-            </ul>
-          </div>
-
-          <!-- Imagery grid -->
-          <div class="about-imagery">
-            <div class="about-img-tall image-zoom">
-              <img
-                src="https://media.zantechbd.com/public_html/thumbnails/img_20251101_125516_min_zantech_1762964252.jpg"
-                alt="Project Uddipon workshop at Sonagazi Girls Pilot High School"
-              />
-            </div>
-            <div class="about-imagery-side">
-              <div class="about-img-small image-zoom">
-                <img
-                  src="https://media.zantechbd.com/public_html/thumbnails/zantech_robotics_workshop_at_scholastica_school_zantech_1757892764.png"
-                  alt="Robotics workshop in progress at Scholastica School"
-                />
-              </div>
-              <div class="about-highlight-card">
-                <h3>Complete STEM Kits</h3>
-                <p>
-                  All robotics kits, materials and equipment are provided by our
-                  team — at no cost to the institution.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     PROGRAMS
-     ====================================================== -->
-      <section id="programs" class="section-alt">
-        <div class="container">
-          <div class="reveal" style="max-width: 640px; margin-bottom: 48px">
-            <span class="eyebrow"
-              ><span class="material-symbols-outlined">settings</span>
-              Programs</span
-            >
-            <h2 class="h-section" style="margin: 12px 0 14px">
-              What We Deliver in Every Workshop
-            </h2>
-            <p style="color: var(--body); line-height: 1.75">
-              Each session is hands-on, project-based, and tailored to the
-              students' age and level. No lectures — just building, coding, and
-              discovering.
-            </p>
-          </div>
-          <div class="programs-grid">
-            <!-- Card 1 — wide, white, with tags -->
-            <div class="bento-card program-card-wide reveal d1">
-              <div>
-                <div class="program-bento-icon pi-on-light">
-                  <span class="material-symbols-outlined">smart_toy</span>
-                </div>
-                <div class="program-bento-title">Robotics Workshops</div>
-                <p class="program-bento-desc">
-                  Students build line-following and obstacle-avoiding robots
-                  using Arduino, sensors and motors. Fully hands-on — every
-                  student builds their own circuit.
-                </p>
-              </div>
-              <div class="program-tags">
-                <span class="tag">Arduino</span>
-                <span class="tag">Sensors</span>
-                <span class="tag">Motors</span>
-                <span class="tag">Class 6 – University</span>
-              </div>
-            </div>
-
-            <!-- Card 2 — navy -->
-            <div class="bento-card program-card-solid bg-navy reveal d2">
-              <div class="program-bento-icon pi-on-dark">
-                <span class="material-symbols-outlined">code</span>
-              </div>
-              <div class="program-bento-title light">
-                Programming &amp; AI Basics
-              </div>
-              <p class="program-bento-desc on-dark">
-                Beginner-friendly introduction to programming logic and AI/ML
-                concepts through visual, real-life examples — no prior
-                experience required.
-              </p>
-            </div>
-
-            <!-- Card 3 — white, plain -->
-            <div class="bento-card program-card-solid bg-white-card reveal d3">
-              <div class="program-bento-icon pi-on-light">
-                <span class="material-symbols-outlined">wifi</span>
-              </div>
-              <div class="program-bento-title">IoT Bootcamps</div>
-              <p class="program-bento-desc">
-                Practical Internet-of-Things projects: smart monitoring, sensor
-                data collection and connected devices tailored to local problems
-                and student imagination.
-              </p>
-            </div>
-
-            <!-- Card 4 — orange -->
-            <div class="bento-card program-card-solid bg-orange reveal d1">
-              <div class="program-bento-icon pi-on-orange">
-                <span class="material-symbols-outlined">female</span>
-              </div>
-              <div class="program-bento-title light">Girls in STEM</div>
-              <p class="program-bento-desc on-dark">
-                Dedicated sessions at girls' schools — designed to build
-                confidence, inspire curiosity, and break gender barriers in
-                technology education across Bangladesh.
-              </p>
-            </div>
-
-            <!-- Card 5 — wide, white, with tags -->
-            <div class="bento-card program-card-wide reveal d2">
-              <div>
-                <div class="program-bento-icon pi-on-light">
-                  <span class="material-symbols-outlined">groups</span>
-                </div>
-                <div class="program-bento-title">STEM Club Formation</div>
-                <p class="program-bento-desc">
-                  After the workshop, we help institutions launch Robotics or
-                  STEM clubs — with starter project ideas, resources and
-                  long-term mentorship from ZAN Tech.
-                </p>
-              </div>
-              <div class="program-tags">
-                <span class="tag">Clubs</span>
-                <span class="tag">Mentorship</span>
-                <span class="tag">Long-term</span>
-              </div>
-            </div>
-
-            <!-- Card 6 — blue -->
-            <div class="bento-card program-card-solid bg-blue reveal d3">
-              <div class="program-bento-icon pi-on-blue">
-                <span class="material-symbols-outlined">record_voice_over</span>
-              </div>
-              <div class="program-bento-title light">Teacher Training</div>
-              <p class="program-bento-desc on-dark">
-                We train teachers on robotics basics and modern STEM teaching
-                methods so hands-on learning continues well after our team
-                leaves the campus.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     HOW IT WORKS / PROCESS
-     ====================================================== -->
-      <section id="how" class="process-section">
-        <div class="container">
-          <div class="process-grid">
-            <div class="reveal process-intro">
-              <span class="process-eyebrow"
-                ><span class="material-symbols-outlined">checklist</span> Our
-                Workflow</span
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-cyan"
+                ><span class="material-symbols-outlined">school</span> Invite us to your institution</a
               >
-              <h2 class="h-section process-heading">
-                Seamless Execution, Start to Finish
-              </h2>
-              <p class="process-lead">
-                Inviting Project Uddipon is simple. From your first message to
-                the final workshop — a smooth, five-step process handled almost
-                entirely by our team.
-              </p>
-              <a href="#contact" class="btn btn-orange">
-                <span class="material-symbols-outlined">send</span> Start the
-                Process Now
-              </a>
+              <a href="#donate" class="btn btn-ghost"
+                ><span class="material-symbols-outlined">volunteer_activism</span> Support a classroom</a
+              >
             </div>
-            <div class="process-steps reveal">
-              <div class="process-step">
-                <div class="process-num">1</div>
-                <div class="process-body">
-                  <h3>You Reach Out</h3>
-                  <p>
-                    Send us a WhatsApp, email or Facebook message with your
-                    institution name, location, student count and preferred
-                    dates.
-                  </p>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-num">2</div>
-                <div class="process-body">
-                  <h3>We Plan Together</h3>
-                  <p>
-                    Our team contacts you within 48 hours to confirm topics,
-                    session format, date and on-site logistics — completely
-                    customised to your students.
-                  </p>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-num">3</div>
-                <div class="process-body">
-                  <h3>We Arrive Fully Equipped</h3>
-                  <p>
-                    ZAN Tech engineers visit your campus with all robotics kits,
-                    computers, materials and activities — zero cost to your
-                    institution.
-                  </p>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-num">4</div>
-                <div class="process-body">
-                  <h3>Students Build &amp; Learn</h3>
-                  <p>
-                    A 3–6 hour hands-on session. Every student builds, codes and
-                    experiments. We handle everything; you watch the
-                    transformation.
-                  </p>
-                </div>
-              </div>
-              <div class="process-step">
-                <div class="process-num">5</div>
-                <div class="process-body">
-                  <h3>Ongoing Support &amp; Club Setup</h3>
-                  <p>
-                    We help launch a STEM club and provide online resources,
-                    project guides and mentorship so the learning never stops.
-                  </p>
-                </div>
-              </div>
+          </div>
+        </div>
+        <div class="hero-caption">
+          <b>Sonagazi Girls' Pilot High School</b>
+          Feni · Hands-on Robotics &amp; AI immersion
+        </div>
+      </section>
+
+      <!-- ================= IMPACT BAR ================= -->
+      <section class="impact" id="impact" aria-label="Our impact">
+        <div class="container">
+          <div class="impact-card reveal">
+            <div class="impact-item">
+              <div class="impact-value" data-target="5000+">5000+</div>
+              <div class="impact-label">Students reached</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-value">15+</div>
+              <div class="impact-label">Institutions visited</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-value" data-stat="femaleParticipation">30–50%</div>
+              <div class="impact-label">Girls in our sessions</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-value red">৳0</div>
+              <div class="impact-label">Cost to any student</div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ======================================================
-     TWO PATHS — DUAL AUDIENCE
-     ====================================================== -->
-      <section id="get-involved" class="paths-section">
+      <!-- ================= WHO WE ARE ================= -->
+      <section id="about" class="section">
+        <div class="container about-grid">
+          <div class="about-media reveal">
+            <img
+              class="main-img"
+              src="https://raw.githubusercontent.com/ZAN-Tech-bd/workshop-Image/refs/heads/main/Sharishadi%20high%20school%20feni/20251104_131414.jpg"
+              alt="Students building robots at Sharishadi High School, Feni"
+              loading="lazy"
+            />
+            <img
+              class="sub-img"
+              src="https://media.zantechbd.com/public_html/thumbnails/20251103_115618_min_zantech_1762963584.jpg"
+              alt="Workshop at Feni Government Pilot High School"
+              loading="lazy"
+            />
+            <div class="tag-card">
+              <b>Kits included</b>
+              Every robot, sensor and laptop is brought by our team.
+            </div>
+          </div>
+
+          <div class="reveal d1">
+            <span class="eyebrow">Who we are</span>
+            <h2 class="h2">We bring the lab to the classroom</h2>
+            <p class="lead">
+              Project Uddipon (<strong>উদ্দীপন</strong> — “inspiration” or
+              “ignition”) is a nationwide STEM empowerment initiative by
+              <strong>ZAN Tech</strong>. Our engineers design and deliver free,
+              high-quality workshops on Robotics, Programming, AI/ML and IoT
+              for students across Bangladesh.
+            </p>
+            <p class="mission">
+              “No talented Bangladeshi student should be left behind in the
+              Fourth Industrial Revolution — regardless of geography, gender or
+              income.”
+            </p>
+            <ul class="checks">
+              <li><span class="material-symbols-outlined">check_circle</span> 100% free for students and institutions</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Delivered by practising ZAN Tech engineers</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Nearly half of all participants are girls</li>
+              <li><span class="material-symbols-outlined">check_circle</span> STEM club setup and mentorship afterwards</li>
+            </ul>
+            <a href="portfolio.html" target="_blank" rel="noopener" class="link-arrow"
+              >Read our impact report <span class="material-symbols-outlined">arrow_forward</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROGRAMMES ================= -->
+      <section id="programs" class="section section-soft">
         <div class="container">
-          <div class="paths-header reveal">
-            <span class="eyebrow"
-              ><span class="material-symbols-outlined">signpost</span> Get
-              Involved</span
-            >
-            <h2 class="h-section" style="margin: 12px 0 14px">
-              How Can You Be Part of Uddipon?
-            </h2>
-            <p
-              style="
-                color: var(--body);
-                font-size: 1rem;
-                line-height: 1.75;
-                max-width: 580px;
-                margin: 0 auto;
-              "
-            >
-              Whether you lead a school, run a company, or manage an NGO — there
-              is a clear path for you to join Bangladesh's largest grassroots
-              STEM movement.
+          <div class="section-head reveal">
+            <span class="eyebrow">What we do</span>
+            <h2 class="h2">Six programmes, one goal: students who build</h2>
+            <p class="lead">
+              Every session is hands-on and project-based, shaped to the
+              students' age and level. No long lectures — just building,
+              coding and discovering.
             </p>
           </div>
-          <div class="paths-grid">
-            <!-- Institutions -->
-            <div class="path-card institutions reveal d1">
-              <div class="path-tag">
-                <span class="material-symbols-outlined">school</span> For
-                Educational Institutions
-              </div>
-              <h3 class="path-title">Bring Uddipon to Your Campus</h3>
-              <p class="path-sub">
-                Schools · Colleges · Universities · Coaching Centres
-              </p>
-              <ul class="path-list">
-                <li>
-                  <span class="material-symbols-outlined">check</span> 3–6 hour
-                  hands-on workshop — 100% free
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> All
-                  equipment &amp; materials provided by our team
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Expert
-                  instructors &amp; engineers on-site
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Robotics
-                  / STEM club setup support included
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span>
-                  Post-workshop online mentorship &amp; resources
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span>
-                  Certificate of participation for students
-                </li>
-              </ul>
-              <a href="#contact" class="btn-path-inst">
-                <span class="material-symbols-outlined">send</span> Request a
-                Free Workshop
-              </a>
-            </div>
 
-            <!-- Partners -->
-            <div class="path-card partners reveal d2">
-              <div class="path-tag">
-                <span class="material-symbols-outlined">apartment</span> For
-                NGOs, Companies &amp; Donors
+          <div class="programs">
+            <article class="program reveal d1">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/zantech_robotics_workshop_at_scholastica_school_zantech_1757892764.png" alt="Robotics workshop at Scholastica School" loading="lazy" />
+                <span class="program-icon"><span class="material-symbols-outlined">smart_toy</span></span>
               </div>
-              <h3 class="path-title">Partner or Sponsor Uddipon</h3>
-              <p class="path-sub">
-                CSR Departments · Development Organisations · Social Investors
-              </p>
-              <ul class="path-list">
-                <li>
-                  <span class="material-symbols-outlined">check</span> Sponsor a
-                  district — fund workshops for hundreds
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Adopt a
-                  school for a full academic year
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Co-brand
-                  community STEM events &amp; competitions
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span>
-                  ESG-aligned impact reporting &amp; documentation
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Custom
-                  STEM programs aligned to your CSR goals
-                </li>
-                <li>
-                  <span class="material-symbols-outlined">check</span> Brand
-                  visibility across 64 districts of Bangladesh
-                </li>
-              </ul>
-              <a href="mailto:zantechbd@gmail.com" class="btn-path-part">
-                <span class="material-symbols-outlined">mail</span> Discuss
-                Partnership Options
-              </a>
-            </div>
+              <div class="program-body">
+                <h3>Robotics Workshops</h3>
+                <p>Students build line-following and obstacle-avoiding robots with Arduino, sensors and motors — every student wires their own circuit.</p>
+                <div class="chips"><span class="chip">Arduino</span><span class="chip">Sensors</span><span class="chip">Class 6 – University</span></div>
+              </div>
+            </article>
+
+            <article class="program reveal d2">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/fb_img_1791439305276_zantech_1791449240.jpg" alt="AI on the Raspberry Pi workshop" loading="lazy" />
+                <span class="program-icon"><span class="material-symbols-outlined">code</span></span>
+              </div>
+              <div class="program-body">
+                <h3>Programming &amp; AI Basics</h3>
+                <p>A beginner-friendly start in programming logic and AI/ML through visual, real-life examples. No experience needed.</p>
+                <div class="chips"><span class="chip">Python</span><span class="chip">AI / ML</span><span class="chip">Raspberry Pi</span></div>
+              </div>
+            </article>
+
+            <article class="program reveal d3">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/487217202_1191854366060559_5513386636292017752_n_zantech_1757953551.jpg" alt="IoT workshop at IUB Fab Lab" loading="lazy" />
+                <span class="program-icon"><span class="material-symbols-outlined">wifi</span></span>
+              </div>
+              <div class="program-body">
+                <h3>IoT Bootcamps</h3>
+                <p>Smart monitoring, sensor data and connected devices — practical projects shaped around local problems.</p>
+                <div class="chips"><span class="chip">ESP32</span><span class="chip">Sensors</span><span class="chip">Cloud</span></div>
+              </div>
+            </article>
+
+            <article class="program reveal d1">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/img_20251101_125516_min_zantech_1762964252.jpg" alt="Girls in STEM session at Sonagazi Girls' Pilot High School" loading="lazy" />
+                <span class="program-icon red"><span class="material-symbols-outlined">female</span></span>
+              </div>
+              <div class="program-body">
+                <h3>Girls in STEM</h3>
+                <p>Dedicated sessions at girls' schools to build confidence, spark curiosity and break gender barriers in technology.</p>
+                <div class="chips"><span class="chip">Confidence</span><span class="chip">Role models</span></div>
+              </div>
+            </article>
+
+            <article class="program reveal d2">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/15_min_zantech_1764856816.png" alt="Students at Sunshine High School and College" loading="lazy" />
+                <span class="program-icon"><span class="material-symbols-outlined">groups</span></span>
+              </div>
+              <div class="program-body">
+                <h3>STEM Club Formation</h3>
+                <p>After the workshop we help launch a robotics or STEM club with starter projects, resources and long-term mentorship.</p>
+                <div class="chips"><span class="chip">Clubs</span><span class="chip">Mentorship</span></div>
+              </div>
+            </article>
+
+            <article class="program reveal d3">
+              <div class="program-img">
+                <img src="https://media.zantechbd.com/public_html/thumbnails/img_7315heic_zantech_1762961763.jpg" alt="Workshop at Feni Government College" loading="lazy" />
+                <span class="program-icon"><span class="material-symbols-outlined">record_voice_over</span></span>
+              </div>
+              <div class="program-body">
+                <h3>Teacher Training</h3>
+                <p>We train teachers in robotics basics and modern STEM teaching, so hands-on learning continues after we leave.</p>
+                <div class="chips"><span class="chip">Educators</span><span class="chip">Methods</span></div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- ======================================================
-     GALLERY
-     ====================================================== -->
-      <section id="gallery" class="section-alt">
+      <!-- ================= HOW IT WORKS ================= -->
+      <section id="how" class="section dark-band">
         <div class="container">
-          <div class="reveal" style="margin-bottom: 40px">
-            <span class="eyebrow"
-              ><span class="material-symbols-outlined">photo_library</span>
-              Gallery</span
-            >
-            <h2 class="h-section" style="margin: 12px 0 10px">
-              Workshops in Action
-            </h2>
-            <p style="color: var(--body); line-height: 1.75">
-              Real moments from real classrooms — students building, coding, and
-              discovering across Bangladesh.
+          <div class="section-head center reveal">
+            <span class="eyebrow on-dark">How it works</span>
+            <h2 class="h2">From your first message to a room full of robots</h2>
+            <p class="lead">Five simple steps — almost all of it handled by our team.</p>
+          </div>
+          <div class="steps">
+            <div class="step reveal d1"><div class="step-num"><b>01</b></div><h3>You reach out</h3><p>Message us with your institution, location, student count and preferred dates.</p></div>
+            <div class="step reveal d2"><div class="step-num"><b>02</b></div><h3>We plan together</h3><p>Within 48 hours we confirm topics, format, date and on-site logistics.</p></div>
+            <div class="step reveal d3"><div class="step-num"><b>03</b></div><h3>We arrive equipped</h3><p>Engineers bring every kit, laptop and material — at zero cost to you.</p></div>
+            <div class="step reveal d4"><div class="step-num"><b>04</b></div><h3>Students build</h3><p>A 3–6 hour hands-on session where every student builds, codes and tests.</p></div>
+            <div class="step reveal d4"><div class="step-num"><b>05</b></div><h3>Club &amp; support</h3><p>We help start a STEM club and keep mentoring online afterwards.</p></div>
+          </div>
+          <div class="steps-cta">
+            <a href="#contact" class="btn btn-cyan"><span class="material-symbols-outlined">send</span> Start the process</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= OUR REACH ================= -->
+      <section id="reach" class="section">
+        <div class="container reach-grid">
+          <div class="reveal">
+            <span class="eyebrow">Our reach</span>
+            <h2 class="h2">Where Uddipon has been</h2>
+            <p class="lead">
+              From Dhaka's universities to girls' schools in Feni and colleges
+              in Sylhet division — and we're only getting started.
             </p>
+            <div class="reach-stats">
+              <div class="reach-stat"><b data-stat="avgPerSession">80+</b><span>Students per session</span></div>
+              <div class="reach-stat"><b data-stat="districtsCovered">3+</b><span>Districts so far</span></div>
+            </div>
+            <div class="goal-bar">
+              <span class="material-symbols-outlined">flag</span>
+              <p>Our goal: <b><span data-stat="goalStudents">100,000+</span> students</b> across all <b><span data-stat="goalDistricts">64</span> districts</b> of Bangladesh.</p>
+            </div>
           </div>
-          <div class="gallery-grid gallery-grid-square" id="galleryGrid"></div>
+          <ul class="institutions reveal d1" id="institutionList" aria-label="Institutions visited"></ul>
         </div>
       </section>
 
-      <!-- ======================================================
-     TEAM / INSTRUCTORS
-     ====================================================== -->
-      <section id="team" class="section">
+      <!-- ================= STORIES ================= -->
+      <section id="stories" class="section section-soft">
         <div class="container">
-          <div class="reveal" style="margin-bottom: 40px">
-            <span class="eyebrow"
-              ><span class="material-symbols-outlined">groups</span> Our
-              Team</span
+          <div class="section-head reveal">
+            <span class="eyebrow">Stories from the field</span>
+            <h2 class="h2">Workshops in action</h2>
+            <p class="lead">Real moments from real classrooms. Tap a photo to see it larger and read the full story.</p>
+          </div>
+          <div class="stories collapsed" id="galleryGrid"></div>
+          <div class="stories-more">
+            <button type="button" class="btn btn-line" id="storiesToggle">
+              <span class="material-symbols-outlined">expand_more</span> Show all stories
+            </button>
+            <a href="portfolio.html" target="_blank" rel="noopener" class="btn btn-navy"
+              ><span class="material-symbols-outlined">description</span> Impact report</a
             >
-            <h2 class="h-section" style="margin: 12px 0 10px">
-              The Engineers Behind Uddipon
-            </h2>
-            <p style="color: var(--body); line-height: 1.75; max-width: 560px">
-              Every Uddipon workshop is delivered by ZAN Tech engineers,
-              researchers and educators who are passionate about democratising
-              STEM education in Bangladesh.
-            </p>
-          </div>
-          <div class="instructors-grid instructors-grid-circle">
-            <div class="instructor-card-circle reveal d2">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Nakibul-islam.jpg"
-                  alt="Nakibul Islam"
-                />
-              </div>
-              <div class="instructor-name">Nakibul Islam</div>
-              <div class="instructor-role">
-                Co-Founder &amp; Lead Programming Trainer
-              </div>
-            </div>
-            <div class="instructor-card-circle reveal d1">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Hana-SultanChowdhury.jpg"
-                  alt="Hana Sultan Chowdhury"
-                />
-              </div>
-              <div class="instructor-name">Hana Sultan Chowdhury</div>
-              <div class="instructor-role">
-                Co-Founder &amp; Lead Robotics &amp; IoT Trainer
-              </div>
-            </div>
-
-            <div class="instructor-card-circle reveal d3">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Tahfizul-Hasan-Zihan.jpg"
-                  alt="Tahfizul Hasan Zihan"
-                />
-              </div>
-              <div class="instructor-name">Tahfizul Hasan Zihan</div>
-              <div class="instructor-role">Robotics &amp; IoT Trainer</div>
-            </div>
-            <div class="instructor-card-circle reveal d4">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Mukut-Protim-Memo.jpg"
-                  alt="Mukut Protim Memo"
-                />
-              </div>
-              <div class="instructor-name">Mukut Protim Memo</div>
-              <div class="instructor-role">Robotics &amp; IoT Trainer</div>
-            </div>
-            <div class="instructor-card-circle reveal d1">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Arman-Hamid.jpg"
-                  alt="Arman Hamid"
-                />
-              </div>
-              <div class="instructor-name">Arman Hamid</div>
-              <div class="instructor-role">Renewable Energy Speaker</div>
-            </div>
-            <div class="instructor-card-circle reveal d2">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Umme-Aiman.jpg"
-                  alt="Umme Aiman"
-                />
-              </div>
-              <div class="instructor-name">Umme Aiman</div>
-              <div class="instructor-role">Programming Trainer</div>
-            </div>
-            <div class="instructor-card-circle reveal d3">
-              <div class="instructor-avatar">
-                <img
-                  src="assets/images/instructors/Tasnimul-Hasan-Nafis.jpg"
-                  alt="Tasnimul Hasan Nafis"
-                />
-              </div>
-              <div class="instructor-name">Tasnimul Hasan Nafis</div>
-              <div class="instructor-role">STEM Outreach Coordinator</div>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- ======================================================
-     TESTIMONIAL / QUOTE
-     ====================================================== -->
-      <section class="quote-section">
+      <!-- ================= VOICE ================= -->
+      <section class="voice" aria-label="Student voice">
+        <div class="voice-bg">
+          <img src="https://media.zantechbd.com/public_html/thumbnails/1_20251202_180604_0000_min_zantech_1764857217.png" alt="" loading="lazy" />
+        </div>
         <div class="container">
-          <div class="quote-inner reveal">
-            <span class="quote-mark">"</span>
-            <p class="quote-text">
+          <blockquote class="reveal">
+            <span class="q-mark">“</span>
+            <p>
               I had never seen a real robot before. But that day, I built one
               myself. Project Uddipon showed me that technology is not just for
               people in the city — it is for all of us.
             </p>
-            <div class="quote-author">
-              <span class="quote-author-name">— A Student Participant</span>
-              <span class="quote-author-role"
-                >Sonagazi Girls' Pilot High School, Feni District</span
-              >
+            <cite><b>Student participant</b>Sonagazi Girls' Pilot High School, Feni</cite>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ================= TEAM ================= -->
+      <section id="team" class="section">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Our team</span>
+            <h2 class="h2">The engineers behind Uddipon</h2>
+            <p class="lead">Every workshop is led by ZAN Tech engineers, researchers and educators who believe STEM belongs to everyone.</p>
+          </div>
+          <div class="team">
+            <div class="member reveal d1"><div class="member-photo"><img src="assets/images/instructors/Nakibul-islam.jpg" alt="Nakibul Islam" loading="lazy" /></div><h3>Nakibul Islam</h3><p>Co-Founder · Lead Programming Trainer</p></div>
+            <div class="member reveal d2"><div class="member-photo"><img src="assets/images/instructors/Hana-SultanChowdhury.jpg" alt="Hana Sultan Chowdhury" loading="lazy" /></div><h3>Hana Sultan Chowdhury</h3><p>Co-Founder · Lead Robotics &amp; IoT Trainer</p></div>
+            <div class="member reveal d3"><div class="member-photo"><img src="assets/images/instructors/Tahfizul-Hasan-Zihan.jpg" alt="Tahfizul Hasan Zihan" loading="lazy" /></div><h3>Tahfizul Hasan Zihan</h3><p>Robotics &amp; IoT Trainer</p></div>
+            <div class="member reveal d4"><div class="member-photo"><img src="assets/images/instructors/Mukut-Protim-Memo.jpg" alt="Mukut Protim Memo" loading="lazy" /></div><h3>Mukut Protim Memo</h3><p>Robotics &amp; IoT Trainer</p></div>
+            <div class="member reveal d1"><div class="member-photo"><img src="assets/images/instructors/Arman-Hamid.jpg" alt="Arman Hamid" loading="lazy" /></div><h3>Arman Hamid</h3><p>Renewable Energy Speaker</p></div>
+            <div class="member reveal d2"><div class="member-photo"><img src="assets/images/instructors/Umme-Aiman.jpg" alt="Umme Aiman" loading="lazy" /></div><h3>Umme Aiman</h3><p>Programming Trainer</p></div>
+            <div class="member reveal d3"><div class="member-photo"><img src="assets/images/instructors/Tasnimul-Hasan-Nafis.jpg" alt="Tasnimul Hasan Nafis" loading="lazy" /></div><h3>Tasnimul Hasan Nafis</h3><p>STEM Outreach Coordinator</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= GET INVOLVED ================= -->
+      <section id="get-involved" class="section section-soft">
+        <div class="container">
+          <div class="section-head center reveal">
+            <span class="eyebrow">Get involved</span>
+            <h2 class="h2">Three ways to be part of Uddipon</h2>
+            <p class="lead">Whether you lead a school, run a company or simply want to help — there's a clear path for you.</p>
+          </div>
+          <div class="involve">
+            <div class="involve-card reveal d1">
+              <span class="involve-icon"><span class="material-symbols-outlined">school</span></span>
+              <h3>Host a workshop</h3>
+              <p class="who">Schools · Colleges · Universities</p>
+              <ul>
+                <li><span class="material-symbols-outlined">check</span> 3–6 hour hands-on session, 100% free</li>
+                <li><span class="material-symbols-outlined">check</span> All equipment brought by our team</li>
+                <li><span class="material-symbols-outlined">check</span> Certificates for students</li>
+                <li><span class="material-symbols-outlined">check</span> STEM club setup support</li>
+              </ul>
+              <a href="#contact" class="btn btn-navy btn-block">Request a free workshop</a>
+            </div>
+            <div class="involve-card navy reveal d2">
+              <span class="involve-icon"><span class="material-symbols-outlined">handshake</span></span>
+              <h3>Partner or sponsor</h3>
+              <p class="who">CSR teams · NGOs · Foundations</p>
+              <ul>
+                <li><span class="material-symbols-outlined">check</span> Sponsor a district or adopt a school</li>
+                <li><span class="material-symbols-outlined">check</span> Co-branded STEM events &amp; competitions</li>
+                <li><span class="material-symbols-outlined">check</span> ESG-aligned impact reporting</li>
+                <li><span class="material-symbols-outlined">check</span> Programmes built around your CSR goals</li>
+              </ul>
+              <a href="mailto:zantechbd@gmail.com?subject=Partnership%20-%20Project%20Uddipon" class="btn btn-line btn-block">Discuss a partnership</a>
+            </div>
+            <div class="involve-card red reveal d3">
+              <span class="involve-icon"><span class="material-symbols-outlined">volunteer_activism</span></span>
+              <h3>Donate</h3>
+              <p class="who">Individuals · Alumni · Communities</p>
+              <ul>
+                <li><span class="material-symbols-outlined">check</span> Fund kits for students who can't afford them</li>
+                <li><span class="material-symbols-outlined">check</span> Bring Uddipon to one more classroom</li>
+                <li><span class="material-symbols-outlined">check</span> Receipt for every contribution</li>
+                <li><span class="material-symbols-outlined">check</span> Zero spent on overhead</li>
+              </ul>
+              <a href="#donate" class="btn btn-red btn-block">Choose an amount</a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ======================================================
-     PARTNERS
-     ====================================================== -->
-      <section id="partners" class="section-alt">
-        <div class="container">
-          <div class="partners-grid">
-            <div class="partners-info reveal">
-              <span class="eyebrow"
-                ><span class="material-symbols-outlined">account_balance</span>
-                Partners &amp; Supporters</span
-              >
-              <h2 class="h-section" style="margin: 12px 0 14px">
-                Powered by Our Partners
-              </h2>
-              <p
-                style="color: var(--body); line-height: 1.75; max-width: 480px"
-              >
-                We collaborate with government bodies, corporations, NGOs and
-                educational institutions to scale Uddipon to all 64 districts of
-                Bangladesh. Your organisation could be next.
-              </p>
-              <div class="partners-badges">
-                <a
-                  href="https://zantechbd.com/"
-                  class="partner-logo-card"
-                  aria-label="ZAN Tech"
-                >
-                  <img
-                    src="assets/images/partners/zantech-logo.png"
-                    alt="ZAN Tech"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="partner-sponsor-card reveal d1">
-              <span class="material-symbols-outlined partner-sponsor-icon"
-                >handshake</span
-              >
-              <h3>Become a Partner or Sponsor</h3>
-              <p>
-                Help us reach more students. Whether you are a tech company, an
-                NGO, a foundation or a government body — there is a meaningful
-                partnership opportunity for you with Project Uddipon. Join us in
-                shaping Bangladesh's STEM future.
-              </p>
-              <div class="btn-group">
-                <a href="mailto:zantechbd@gmail.com" class="btn btn-orange">
-                  <span class="material-symbols-outlined">mail</span> Email to
-                  Partner
-                </a>
-                <a
-                  href="https://wa.me/8801894634149?text=Hello%20ZAN%20Tech%2C%20I'm%20interested%20in%20partnering%20with%20Project%20Uddipon."
-                  target="_blank"
-                  rel="noopener"
-                  class="btn btn-outline-white"
-                >
-                  <i class="fa-brands fa-whatsapp"></i> WhatsApp Enquiry
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     DONATE / SUPPORT US
-     ====================================================== -->
-      <section id="donate" class="donate-section">
-        <div class="container">
-          <div class="donate-grid">
-            <div class="reveal">
-              <span class="eyebrow donate-eyebrow"
-                ><span class="material-symbols-outlined">favorite</span>
-                Support Our Mission</span
-              >
-              <h2 class="h-section donate-heading">
-                Help Us Reach the Next 5,000 Students
-              </h2>
-              <p class="donate-lead">
-                Project Uddipon runs entirely on goodwill — every kit,
-                sensor and travel cost is funded by people who believe every
-                Bangladeshi student deserves a chance to build, code and
-                create. Your donation, big or small, takes Uddipon to one
-                more classroom.
-              </p>
-
-              <div class="donate-impact">
-                <div class="donate-impact-item">
-                  <div class="donate-impact-amount">৳1,500</div>
-                  <div class="donate-impact-text">
-                    Sponsors a robotics kit for one student
-                  </div>
-                </div>
-                <div class="donate-impact-item">
-                  <div class="donate-impact-amount">৳5,000</div>
-                  <div class="donate-impact-text">
-                    Funds a full workshop for one classroom
-                  </div>
-                </div>
-                <div class="donate-impact-item">
-                  <div class="donate-impact-amount">৳15,000</div>
-                  <div class="donate-impact-text">
-                    Brings a complete Uddipon bootcamp to a school
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="donate-card reveal d1">
-              <div class="donate-card-icon">
-                <span class="material-symbols-outlined">volunteer_activism</span>
-              </div>
-              <h3>Ready to Donate?</h3>
-              <p>
-                We don't process card payments online. Reach out and our
-                team will personally share secure <strong>bKash, Nagad or
-                bank transfer</strong> details and a receipt for your
-                contribution.
-              </p>
-              <div class="donate-actions">
-                <a
-                  href="https://wa.me/8801894634149?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20donate%20to%20support%20Project%20Uddipon.%20Please%20share%20the%20donation%20details."
-                  target="_blank"
-                  rel="noopener"
-                  class="wa-btn"
-                  style="width: 100%; justify-content: center"
-                >
-                  <i class="fa-brands fa-whatsapp"></i> Donate via WhatsApp
-                </a>
-                <a
-                  href="mailto:zantechbd@gmail.com?subject=Donation%20Enquiry%20-%20Project%20Uddipon&body=Assalamu%20Alaikum%2C%0A%0AI%20would%20like%20to%20donate%20to%20support%20Project%20Uddipon.%20Please%20share%20the%20donation%20details.%0A%0AName%3A%0AAmount%20(approx.)%3A"
-                  class="btn btn-outline-blue"
-                  style="width: 100%; justify-content: center"
-                >
-                  <span class="material-symbols-outlined">mail</span> Email to
-                  Donate
-                </a>
-              </div>
-              <div class="donate-note">
-                <span class="material-symbols-outlined">verified</span>
-                <p>
-                  Every taka goes directly into kits, materials and outreach
-                  — <strong>zero</strong> spent on overhead.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======================================================
-     CONTACT / INVITE
-     ====================================================== -->
-      <section id="contact" class="section">
-        <div class="container">
-          <div class="reveal" style="margin-bottom: 48px">
-            <span class="eyebrow orange"
-              ><span class="material-symbols-outlined">send</span> Contact
-              Us</span
-            >
-            <h2 class="h-section" style="margin: 12px 0 14px">
-              Get in Touch with Uddipon
-            </h2>
-            <p style="color: var(--body); line-height: 1.75; max-width: 560px">
-              Whether you want to invite us to your institution or explore a
-              partnership — reach out through any channel below and our team
-              will respond within 48 hours.
+      <!-- ================= DONATE ================= -->
+      <section id="donate" class="section">
+        <div class="container donate">
+          <div class="reveal">
+            <span class="eyebrow red">Support our mission</span>
+            <h2 class="h2">Help us reach the next 5,000 students</h2>
+            <p class="lead">
+              Uddipon runs on goodwill — every kit, sensor and bus ticket is
+              funded by people who believe every Bangladeshi student deserves
+              a chance to build, code and create.
             </p>
+            <div class="donate-tiers" role="radiogroup" aria-label="Donation amount">
+              <button type="button" class="tier" data-amount="1,500" role="radio" aria-checked="false"><b>৳1,500</b><span>A robotics kit for one student</span></button>
+              <button type="button" class="tier selected" data-amount="5,000" role="radio" aria-checked="true"><b>৳5,000</b><span>A full workshop for one classroom</span></button>
+              <button type="button" class="tier" data-amount="15,000" role="radio" aria-checked="false"><b>৳15,000</b><span>A complete bootcamp for a school</span></button>
+            </div>
           </div>
-          <div class="contact-grid-12">
-            <!-- For Institutions -->
-            <div class="contact-info-card reveal d1">
-              <div class="contact-card-header">
-                <div class="contact-card-icon cci-blue">
-                  <span class="material-symbols-outlined">school</span>
-                </div>
-                <div>
-                  <div class="contact-card-title">
-                    Invite Uddipon to Your Institution
-                  </div>
-                  <div class="contact-card-sub">
-                    Schools · Colleges · Universities
-                  </div>
-                </div>
-              </div>
+          <div class="donate-box reveal d1">
+            <h3>Ready to give?</h3>
+            <p>
+              We don't take card payments online. Message us and our team will
+              personally share secure <strong>bKash, Nagad or bank transfer</strong>
+              details — and send you a receipt.
+            </p>
+            <a
+              id="donateWa"
+              href="https://wa.me/8801894634149?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20donate%20%E0%A7%B35%2C000%20to%20support%20Project%20Uddipon.%20Please%20share%20the%20donation%20details."
+              target="_blank"
+              rel="noopener"
+              class="btn btn-wa btn-block"
+              ><i class="fa-brands fa-whatsapp"></i> Donate <span id="donateAmount">৳5,000</span> via WhatsApp</a
+            >
+            <a
+              href="mailto:zantechbd@gmail.com?subject=Donation%20Enquiry%20-%20Project%20Uddipon"
+              class="btn btn-ghost btn-block"
+              ><span class="material-symbols-outlined">mail</span> Email to donate</a
+            >
+            <div class="donate-trust">
+              <span class="material-symbols-outlined">verified</span>
+              <span>Every taka goes into kits, materials and outreach — <strong>zero</strong> overhead.</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div class="contact-row">
-                <div class="cr-icon">
-                  <span class="material-symbols-outlined">location_on</span>
-                </div>
-                <div class="cr-text">
-                  House 48, Road 9/C, Sector 5, Uttara, Dhaka - 1230, Bangladesh
-                </div>
-              </div>
-              <div class="contact-row">
-                <div class="cr-icon">
-                  <span class="material-symbols-outlined">call</span>
-                </div>
-                <div class="cr-text">
-                  <a href="tel:+8801894634149">01894-634149</a>
-                  <span style="color: var(--muted); font-size: 0.8rem"
-                    >(Phone &amp; WhatsApp)</span
-                  >
-                </div>
-              </div>
-              <div class="contact-row">
-                <div class="cr-icon">
-                  <span class="material-symbols-outlined">mail</span>
-                </div>
-                <div class="cr-text">
-                  <a href="mailto:zantechbd@gmail.com">zantechbd@gmail.com</a>
-                </div>
-              </div>
-              <div class="contact-row">
-                <div class="cr-icon">
-                  <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <div class="cr-text">
-                  <a
-                    href="https://www.facebook.com/ZanTechBD"
-                    target="_blank"
-                    rel="noopener"
-                    >facebook.com/ZanTechBD</a
-                  >
-                </div>
-              </div>
+      <!-- ================= PARTNERS + CONTACT ================= -->
+      <section id="contact" class="section section-soft">
+        <div class="container">
+          <div class="partners reveal" id="partners">
+            <span class="partners-label">Powered by</span>
+            <a href="https://zantechbd.com/" target="_blank" rel="noopener" aria-label="ZAN Tech">
+              <img src="assets/images/partners/zantech-logo.png" alt="ZAN Tech" />
+            </a>
+            <span class="spacer"></span>
+            <a href="mailto:zantechbd@gmail.com?subject=Partnership%20-%20Project%20Uddipon" class="link-arrow"
+              >Your organisation here? Become a partner <span class="material-symbols-outlined">arrow_forward</span></a
+            >
+          </div>
 
+          <div class="section-head reveal" style="margin-top: 72px">
+            <span class="eyebrow">Contact</span>
+            <h2 class="h2">Invite Uddipon to your institution</h2>
+            <p class="lead">Reach out through any channel — our team replies within 48 hours.</p>
+          </div>
+
+          <div class="contact">
+            <div class="contact-card reveal d1">
+              <div class="contact-row">
+                <span class="ico"><span class="material-symbols-outlined">call</span></span>
+                <div><small>Phone &amp; WhatsApp</small><a href="tel:+8801894634149">01894-634149</a></div>
+              </div>
+              <div class="contact-row">
+                <span class="ico"><span class="material-symbols-outlined">mail</span></span>
+                <div><small>Email</small><a href="mailto:zantechbd@gmail.com">zantechbd@gmail.com</a></div>
+              </div>
+              <div class="contact-row">
+                <span class="ico"><i class="fa-brands fa-facebook-f"></i></span>
+                <div><small>Facebook</small><a href="https://www.facebook.com/ZanTechBD" target="_blank" rel="noopener">facebook.com/ZanTechBD</a></div>
+              </div>
+              <div class="contact-row">
+                <span class="ico"><span class="material-symbols-outlined">location_on</span></span>
+                <div><small>Office</small>House 48, Road 9/C, Sector 5, Uttara, Dhaka 1230</div>
+              </div>
               <a
                 href="https://wa.me/8801894634149?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20invite%20Project%20Uddipon%20to%20our%20institution."
                 target="_blank"
                 rel="noopener"
-                class="wa-btn"
+                class="btn btn-wa btn-block"
+                style="margin-top: 18px"
+                ><i class="fa-brands fa-whatsapp"></i> Send a WhatsApp message</a
               >
-                <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Message
-              </a>
             </div>
 
-            <!-- Message Template -->
-            <div class="contact-template-card reveal d2">
-              <div class="contact-card-header">
-                <div class="contact-card-icon cci-orange-dark">
-                  <span class="material-symbols-outlined">chat</span>
-                </div>
-                <div>
-                  <div class="contact-card-title light">Message Template</div>
-                  <div class="contact-card-sub light">
-                    Copy, edit and send via WhatsApp, email or Facebook
-                  </div>
-                </div>
-              </div>
-              <p
-                style="
-                  font-size: 0.85rem;
-                  color: rgba(255, 255, 255, 0.65);
-                  margin-bottom: 8px;
-                "
-              >
-                Include these details when you contact us:
-              </p>
-              <pre class="msg-template msg-template-dark">
-Hi, Assalamu Alaikum!
+            <div class="template-card reveal d2">
+              <span class="eyebrow on-dark">Message template</span>
+              <h3>Copy, fill in, send</h3>
+              <pre class="template" id="msgTemplate">Hi, Assalamu Alaikum!
 
 I am [Your Name], [Your Role] at
 [Institution Name], [District].
 
 We would like to invite Project Uddipon
-for a STEM / Robotics / AI Workshop.
+for a STEM / Robotics / AI workshop.
 
 Approx. students : [e.g. 60]
 Level            : [Class 6–10 / College / University]
 Topics           : [Robotics / AI / IoT / Programming]
 Preferred dates  : [Your preferred dates]
-
 Contact number   : [Your phone number]
 
-Thank you.</pre
-              >
-              <a
-                href="https://wa.me/8801894634149?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20invite%20Project%20Uddipon%20to%20our%20institution."
-                target="_blank"
-                rel="noopener"
-                class="btn btn-orange"
-                style="margin-top: 18px; width: 100%; justify-content: center"
-              >
-                <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Inquiry
-              </a>
-              <div class="contact-note">
-                <span class="material-symbols-outlined">info</span>
-                <p>
-                  Our team will respond within <strong>48 hours</strong> to
-                  confirm availability and begin planning your session.
-                </p>
+Thank you.</pre>
+              <div class="template-actions">
+                <button type="button" class="btn btn-ghost" id="copyTemplate">
+                  <span class="material-symbols-outlined">content_copy</span> <span>Copy</span>
+                </button>
+                <a
+                  id="sendTemplate"
+                  href="https://wa.me/8801894634149"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn-cyan"
+                  ><i class="fa-brands fa-whatsapp"></i> Send on WhatsApp</a
+                >
               </div>
             </div>
           </div>
@@ -1135,173 +598,93 @@ Thank you.</pre
       </section>
     </main>
 
-    <!-- ======================================================
-     FOOTER
-     ====================================================== -->
-    <footer class="site-footer">
-      <div class="footer-main">
-        <div class="container footer-grid">
-          <div>
-            <div class="footer-brand">Project Uddipon</div>
-            <p class="footer-tagline">
-              A STEM &amp; Robotics outreach initiative by
-              <strong style="color: #e2e8f0">ZAN Tech</strong>, bringing free,
-              hands-on technology education to students across Bangladesh.
-            </p>
-            <div class="footer-social">
-              <a
-                href="https://www.facebook.com/ZanTechBD"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a
-                href="https://instagram.com/zantechbd"
-                target="_blank"
-                rel="noopener"
-                aria-label="Instagram"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a
-                href="https://youtube.com/@ZANTechBD"
-                target="_blank"
-                rel="noopener"
-                aria-label="YouTube"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
-              <a
-                href="https://tiktok.com/@zantechbd"
-                target="_blank"
-                rel="noopener"
-                aria-label="TikTok"
-                ><i class="fa-brands fa-tiktok"></i
-              ></a>
-              <a
-                href="https://www.linkedin.com/company/zantechbd"
-                target="_blank"
-                rel="noopener"
-                aria-label="LinkedIn"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-
-          <div>
-            <div class="footer-col-title">Quick Links</div>
-            <ul class="footer-links">
-              <li><a href="#about">About Project Uddipon</a></li>
-              <li><a href="#programs">Our Programs</a></li>
-              <li><a href="#impact">Our Impact</a></li>
-              <li><a href="#gallery">Workshop Gallery</a></li>
-              <li><a href="#team">Our Team</a></li>
-              <li><a href="#get-involved">Get Involved</a></li>
-              <li><a href="#donate">Donate</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="footer-col-title">ZAN Tech</div>
-            <ul class="footer-links">
-              <li>
-                <a href="https://zantechbd.com" target="_blank" rel="noopener"
-                  >zantechbd.com</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://store.zantechbd.com"
-                  target="_blank"
-                  rel="noopener"
-                  >STEM Kits Store</a
-                >
-              </li>
-              <li>
-                <a
-                  href="portfolio.html"
-                  target="_blank"
-                  rel="noopener"
-                  >View Portfolio</a
-                >
-              </li>
-              <li><a href="#partners">Partnership Enquiry</a></li>
-              <li><a href="#contact">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="footer-col-title">Contact</div>
-            <div class="footer-contact-item">
-              <span class="material-symbols-outlined">location_on</span>
-              <span>House 48, Road 9/C, Sector 5, Uttara, Dhaka - 1230</span>
-            </div>
-            <div class="footer-contact-item">
-              <span class="material-symbols-outlined">call</span>
-              <a href="tel:+8801894634149">01894-634149</a>
-            </div>
-            <div class="footer-contact-item">
-              <span class="material-symbols-outlined">mail</span>
-              <a href="mailto:zantechbd@gmail.com">zantechbd@gmail.com</a>
-            </div>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-cta">
+          <h2>Every student deserves the chance to build their first robot.</h2>
+          <div class="actions">
+            <a href="#contact" class="btn btn-cyan">Invite Uddipon</a>
+            <a href="#donate" class="btn btn-red"><span class="material-symbols-outlined">favorite</span> Donate</a>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <span
-            >© <span id="year"></span> Project Uddipon &amp;
-            <a href="https://zantechbd.com" target="_blank" rel="noopener"
-              >ZAN Tech</a
-            >. All rights reserved.</span
-          >
+
+        <div class="footer-grid">
+          <div>
+            <img class="footer-logo" src="assets/images/logo-uddipon.png" alt="Project Uddipon" />
+            <p class="footer-about">
+              A STEM &amp; robotics outreach initiative by ZAN Tech, bringing
+              free, hands-on technology education to students across
+              Bangladesh.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/ZanTechBD" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://instagram.com/zantechbd" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://youtube.com/@ZANTechBD" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://tiktok.com/@zantechbd" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+              <a href="https://www.linkedin.com/company/zantechbd" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div>
+            <h4>Uddipon</h4>
+            <ul>
+              <li><a href="#about">Who we are</a></li>
+              <li><a href="#programs">Programmes</a></li>
+              <li><a href="#reach">Our reach</a></li>
+              <li><a href="#stories">Stories</a></li>
+              <li><a href="#team">Team</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Get involved</h4>
+            <ul>
+              <li><a href="#contact">Host a workshop</a></li>
+              <li><a href="#get-involved">Partner with us</a></li>
+              <li><a href="#donate">Donate</a></li>
+              <li><a href="portfolio.html" target="_blank" rel="noopener">Impact report</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>ZAN Tech</h4>
+            <ul class="footer-contact">
+              <li><a href="https://zantechbd.com" target="_blank" rel="noopener">zantechbd.com</a></li>
+              <li><a href="https://store.zantechbd.com" target="_blank" rel="noopener">STEM kits store</a></li>
+              <li><a href="tel:+8801894634149">01894-634149</a></li>
+              <li><a href="mailto:zantechbd@gmail.com">zantechbd@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© <span id="year"></span> Project Uddipon · All rights reserved.</span>
+          <span>An initiative of <a href="https://zantechbd.com" target="_blank" rel="noopener"><b>ZAN<i>TECH</i></b></a></span>
         </div>
       </div>
     </footer>
 
-    <!-- ======================================================
-     LIGHTBOX
-     ====================================================== -->
-    <div
-      id="lightboxBackdrop"
-      class="lightbox-backdrop"
-      role="dialog"
-      aria-modal="true"
-    >
-      <button
-        id="lightboxClose"
-        class="lightbox-close"
-        aria-label="Close lightbox"
-      >
+    <!-- ================= LIGHTBOX ================= -->
+    <div id="lightboxBackdrop" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button id="lightboxClose" class="lightbox-close" aria-label="Close">
         <span class="material-symbols-outlined">close</span>
       </button>
       <img id="lightboxImg" class="lightbox-img" src="" alt="Workshop photo" />
       <div class="lightbox-info">
         <div id="lightboxCaption" class="lightbox-caption"></div>
-        <a
-          id="lightboxDetails"
-          class="lightbox-details"
-          href="#"
-          target="_blank"
-          rel="noopener"
-        >
-          View Details
-          <span class="material-symbols-outlined">arrow_forward</span>
+        <a id="lightboxDetails" class="lightbox-details" href="#" target="_blank" rel="noopener">
+          Read the story <span class="material-symbols-outlined">arrow_forward</span>
         </a>
       </div>
     </div>
 
-    <!-- ======================================================
-     FLOATING BUTTONS
-     ====================================================== -->
+    <!-- ================= FLOATING BUTTONS ================= -->
     <a
       href="https://wa.me/8801894634149?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20invite%20Project%20Uddipon%20to%20our%20institution."
       target="_blank"
       rel="noopener"
       class="fab-wa"
       aria-label="Chat on WhatsApp"
-    >
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
+      ><i class="fa-brands fa-whatsapp"></i
+    ></a>
     <button id="fabTop" class="fab-top" aria-label="Back to top">
       <span class="material-symbols-outlined">arrow_upward</span>
     </button>

@@ -1,25 +1,26 @@
-/* Project Uddipon — Design System v3 (Navy / Burnt-Orange) */
+/* Project Uddipon — Design System v4 (ZAN Tech: navy / cyan / red).
+   Used by portfolio.html; the home page has its own site.css. */
 
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kodchasan:wght@400;500;600;700&family=Hind+Siliguri:wght@600;700&family=JetBrains+Mono:wght@600;700&display=swap');
 
 /* === DESIGN TOKENS === */
 :root {
-  --navy:         #001A48;
-  --navy-mid:     #16315C;
-  --navy-soft:    #E8EDF6;
-  --blue:         #3D5CA2;
-  --blue-hover:   #2C4683;
-  --blue-soft:    #EEF1F8;
-  --orange:       #FE6500;
-  --orange-hover: #E65C00;
-  --orange-soft:  #FFF0E4;
-  --orange-deep:  #A33E00;
+  --navy:         #0B0F19;
+  --navy-mid:     #1C2436;
+  --navy-soft:    #E9EDF3;
+  --blue:         #0891B2;
+  --blue-hover:   #0E7490;
+  --blue-soft:    #E0F6FB;
+  --orange:       #ED2626;
+  --orange-hover: #C81E1E;
+  --orange-soft:  #FDE7E7;
+  --orange-deep:  #A51919;
   --green:        #0C9865;
   --green-soft:   #E7F7F1;
   --red:          #DC2626;
   --red-soft:     #FEE2E2;
 
-  --dark:    #051028;
+  --dark:    #0B0F19;
   --text:    #0F1722;
   --body:    #4B5563;
   --muted:   #8898A8;
@@ -28,15 +29,15 @@
   --surface: #F6F8FB;
   --white:   #FFFFFF;
 
-  --font-head: 'Hanken Grotesk', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-head: 'Kodchasan', 'Hind Siliguri', system-ui, sans-serif;
+  --font-body: 'Kodchasan', 'Hind Siliguri', system-ui, sans-serif;
   --font-caps: 'JetBrains Mono', monospace;
 
-  --shadow-xs: 0 1px 3px rgba(0,26,72,.05);
-  --shadow-sm: 0 2px 10px rgba(0,26,72,.07);
-  --shadow-md: 0 8px 28px rgba(0,26,72,.09);
-  --shadow-lg: 0 20px 50px -8px rgba(0,26,72,.14);
-  --shadow-xl: 0 32px 72px rgba(0,26,72,.16);
+  --shadow-xs: 0 1px 3px rgba(11,15,25,.05);
+  --shadow-sm: 0 2px 10px rgba(11,15,25,.07);
+  --shadow-md: 0 8px 28px rgba(11,15,25,.09);
+  --shadow-lg: 0 20px 50px -8px rgba(11,15,25,.14);
+  --shadow-xl: 0 32px 72px rgba(11,15,25,.16);
 
   --r-xs:   4px;
   --r-sm:   8px;
@@ -141,7 +142,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
   cursor: pointer;
   white-space: nowrap;
   transition: all var(--t-fast);
-  box-shadow: 0 4px 14px 0 rgba(0,26,72,.10);
+  box-shadow: 0 4px 14px 0 rgba(11,15,25,.10);
 }
 .btn-group { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .btn-lg    { padding: 15px 34px; font-size: .9rem; }
@@ -155,7 +156,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
   background: var(--navy-mid);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 10px 26px rgba(0,26,72,.26);
+  box-shadow: 0 10px 26px rgba(11,15,25,.26);
 }
 .btn-orange {
   background: var(--orange);
@@ -317,14 +318,14 @@ ul  { list-style: none; padding: 0; margin: 0; }
   padding: 9px 20px !important;
   font-weight: 700 !important;
   font-size: .84rem !important;
-  box-shadow: 0 4px 14px rgba(0,26,72,.18) !important;
+  box-shadow: 0 4px 14px rgba(11,15,25,.18) !important;
   transition: all var(--t-fast) !important;
 }
 .nav-cta-blue:hover {
   background: var(--navy-mid) !important;
   color: #fff !important;
   transform: translateY(-1px);
-  box-shadow: 0 8px 22px rgba(0,26,72,.28) !important;
+  box-shadow: 0 8px 22px rgba(11,15,25,.28) !important;
 }
 .nav-cta-orange {
   display: inline-flex !important;
@@ -399,7 +400,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
   top: 0; right: 0;
   width: 46%;
   height: 100%;
-  background: linear-gradient(160deg, rgba(0,26,72,.05) 0%, rgba(61,92,162,.07) 100%);
+  background: linear-gradient(160deg, rgba(11,15,25,.05) 0%, rgba(61,92,162,.07) 100%);
   clip-path: polygon(38% 0, 100% 0, 100% 100%, 0% 100%);
   pointer-events: none;
 }
@@ -467,7 +468,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
 .hero-photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(254,101,0,.38) 0%, rgba(0,26,72,0) 32%, rgba(0,26,72,.62) 100%);
+  background: linear-gradient(180deg, rgba(254,101,0,.38) 0%, rgba(11,15,25,0) 32%, rgba(11,15,25,.62) 100%);
   pointer-events: none;
 }
 .hero-photo-logo {
@@ -735,7 +736,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
 }
 .bento-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 25px -5px rgba(0,26,72,.12), 0 10px 10px -5px rgba(0,26,72,.04);
+  box-shadow: 0 20px 25px -5px rgba(11,15,25,.12), 0 10px 10px -5px rgba(11,15,25,.04);
 }
 .program-card-wide {
   display: flex;
@@ -1012,7 +1013,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(0,26,72,.55));
+  background: linear-gradient(to bottom, transparent 40%, rgba(11,15,25,.55));
   opacity: 0;
   transition: opacity var(--t-med);
   display: flex;
@@ -1584,7 +1585,7 @@ ul  { list-style: none; padding: 0; margin: 0; }
   font-size: .88rem;
   cursor: pointer;
   z-index: 90;
-  box-shadow: 0 4px 16px rgba(0,26,72,.28);
+  box-shadow: 0 4px 16px rgba(11,15,25,.28);
   opacity: 0;
   transform: translateY(8px);
   transition: all var(--t-fast);
