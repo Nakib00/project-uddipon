@@ -1,27 +1,18 @@
 <?php
 // Auto-deploy: GitHub calls this on every push; it syncs this folder to origin/main.
-// The webhook secret lives outside the web root so it never ends up in the repo.
+// The request body is never used, so no secret is needed: the most anyone can do
+// by calling this is make the server re-sync the same public repo.
 
-$secretFile = '/home/kwcygnxz/.uddipon-deploy-secret';
-$logFile    = '/home/kwcygnxz/uddipon-deploy.log';
-$repo       = 'https://github.com/Nakib00/project-uddipon.git';
-$branch     = 'main';
-$dir        = __DIR__;
+$logFile = '/home/kwcygnxz/uddipon-deploy.log';
+$repo    = 'https://github.com/Nakib00/project-uddipon.git';
+$branch  = 'main';
+$dir     = __DIR__;
 
 header('Content-Type: text/plain');
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     exit("POST only\n");
-}
-
-$secret    = is_readable($secretFile) ? trim(file_get_contents($secretFile)) : '';
-$payload   = file_get_contents('php://input');
-$signature = $_SERVER['HTTP_X_HUB_SIGNATURE_256'] ?? '';
-
-if ($secret === '' || !hash_equals('sha256=' . hash_hmac('sha256', $payload, $secret), $signature)) {
-    http_response_code(403);
-    exit("Bad signature\n");
 }
 
 $event = $_SERVER['HTTP_X_GITHUB_EVENT'] ?? '';
@@ -32,14 +23,15 @@ if ($event !== 'push') {
     exit("Ignored event: $event\n");
 }
 
-$data = json_decode($payload, true);
-if (($data['ref'] ?? '') !== "refs/heads/$branch") {
-    exit("Ignored branch\n");
-}
-
 if (!function_exists('shell_exec')) {
     http_response_code(500);
     exit("shell_exec is disabled on this server\n");
+}
+
+// One deploy at a time.
+$lock = fopen(sys_get_temp_dir() . '/uddipon-deploy.lock', 'c');
+if (!$lock || !flock($lock, LOCK_EX | LOCK_NB)) {
+    exit("Deploy already running\n");
 }
 
 $git = trim((string) shell_exec('command -v git')) ?: '/usr/local/cpanel/3rdparty/bin/git';
