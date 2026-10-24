@@ -189,6 +189,7 @@ p { margin: 0; }
   font-weight: 600;
   color: var(--body);
   border-radius: 8px;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 .nav a.nav-link:hover,
@@ -203,8 +204,24 @@ p { margin: 0; }
   border-radius: 2px;
   background: var(--teal);
 }
+/* Impact Report: a highlighted menu item so the report is one click away */
+.nav a.nav-link.nav-report {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+  padding: 7px 12px;
+  border: 1px solid rgb(8 145 178 / 0.35);
+  border-radius: 999px;
+  background: rgb(8 145 178 / 0.08);
+  color: var(--teal);
+}
+.nav a.nav-link.nav-report .material-symbols-outlined { font-size: 1.1rem; }
+.nav a.nav-link.nav-report:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
 .header-cta { display: flex; gap: 10px; margin-left: 12px; }
 .header-cta .btn { min-height: 42px; padding: 0 18px; font-size: 0.9rem; }
+/* The hero already offers "Invite us", so the header keeps just Donate (the drawer shows both) */
+.header-cta .btn-line { display: none; }
 
 .nav-toggle {
   display: none;
@@ -249,7 +266,7 @@ p { margin: 0; }
   background-size: 48px 48px;
   mask-image: linear-gradient(90deg, #000 30%, transparent 75%);
 }
-.hero-content { position: relative; padding: 120px 0 150px; max-width: 700px; }
+.hero-content { position: relative; padding: 96px 0 140px; max-width: 700px; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -269,7 +286,46 @@ p { margin: 0; }
 .hero h1 .accent { color: var(--cyan); }
 .hero h1 .bn { display: block; font-family: "Hind Siliguri", var(--font); color: var(--sun); font-size: 0.7em; margin-top: 10px; font-weight: 700; }
 .hero p.hero-lead { margin-top: 22px; font-size: 1.15rem; color: #cbd5e1; max-width: 560px; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-report {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 520px;
+  margin-top: 22px;
+  padding: 12px 16px 12px 12px;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  border-left: 3px solid var(--sun);
+  border-radius: 14px;
+  background: rgb(11 15 25 / 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.hero-report:hover { border-color: rgb(255 255 255 / 0.4); border-left-color: var(--sun); background: rgb(11 15 25 / 0.75); }
+.hero-report-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--sun);
+  color: var(--navy);
+  font-size: 1.4rem;
+}
+.hero-report-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hero-report-text small {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sun);
+}
+.hero-report-text b { font-size: 0.98rem; font-weight: 600; line-height: 1.35; }
+.hero-report-go { flex: none; margin-left: auto; color: var(--sun); transition: transform 0.2s ease; }
+.hero-report:hover .hero-report-go { transform: translateX(4px); }
 .hero-caption {
   position: absolute;
   right: 24px;
@@ -805,16 +861,12 @@ p { margin: 0; }
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 1100px) {
-  .header-cta .btn-line { display: none; }
-  .nav a.nav-link { padding: 8px 9px; }
   .steps { grid-template-columns: repeat(3, 1fr); }
   .team { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 960px) {
-  .section { padding: 72px 0; }
-  .utility-hide-md { display: none; }
-
+/* The full menu (with Impact Report) needs ~1150px; below that use the drawer */
+@media (max-width: 1180px) {
   /* Mobile navigation drawer.
      backdrop-filter would make the header the containing block for the
      fixed drawer (trapping it inside the 70px bar), so drop it here. */
@@ -840,12 +892,18 @@ p { margin: 0; }
   .nav.nav-open { transform: none; }
   .nav a.nav-link { padding: 14px 12px; font-size: 1.05rem; border-bottom: 1px solid var(--line); border-radius: 0; }
   .nav a.nav-link.active::after { display: none; }
+  .nav a.nav-link.nav-report { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; justify-content: center; }
   .header-cta { flex-direction: column; margin: 18px 0 0; }
   .header-cta .btn,
   .header-cta .btn-line { display: inline-flex; width: 100%; min-height: 48px; }
   .nav-close { display: flex !important; }
   .nav-scrim { position: fixed; inset: 0; background: rgb(11 15 25 / 0.5); z-index: 65; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
   .nav-scrim.show { opacity: 1; pointer-events: auto; }
+}
+
+@media (max-width: 960px) {
+  .section { padding: 72px 0; }
+  .utility-hide-md { display: none; }
 
   .hero-content { padding: 90px 0 140px; }
   .hero-caption { display: none; }
