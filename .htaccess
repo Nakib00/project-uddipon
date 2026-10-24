@@ -1,0 +1,2 @@
+# Keep the deploy checkout's git data private
+RedirectMatch 404 /\.git
