@@ -15,6 +15,12 @@
 /* Newest first. */
 const WORKSHOPS = [
   {
+    image: "https://media.zantechbd.com/public_html/thumbnails/img_20261112_wa0024_zantech_1794505715_qxont7.jpg",
+    caption: "Robotics & Creative Technology — Seito Kashikoi School",
+    institution: "Seito Kashikoi School",
+    details: "https://zantechbd.com/workshop/robotics-and-creative-technology-workshop-at-seito-kashikoi-school",
+  },
+  {
     image: "https://media.zantechbd.com/public_html/thumbnails/fb_img_1791439305276_zantech_1791449240.jpg",
     caption: "AI on the Raspberry Pi — UAP EEE Project Club",
     institution: "University of Asia Pacific (UAP), EEE Project Club",
@@ -116,6 +122,7 @@ const WORKSHOPS = [
    Add an entry here whenever a new institution hosts an Uddipon session —
    it is picked up automatically on the Portfolio page. */
 const INSTITUTIONS = [
+  "Seito Kashikoi School",
   "University of Asia Pacific (UAP) — EEE Project Club",
   "Feni Government College",
   "Sharishadi High School",

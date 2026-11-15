@@ -31,7 +31,11 @@
               (w) => `
             <div class="pf-snap">
               <img src="${w.image}" alt="${w.caption.replace(/"/g, "&quot;")}" loading="lazy" />
-              <div class="pf-snap-cap">${w.caption}</div>
+              <div class="pf-snap-cap">${
+                w.details
+                  ? `<a href="${w.details}" target="_blank" rel="noopener">${w.caption}</a>`
+                  : w.caption
+              }</div>
             </div>`
             )
             .join("")}
